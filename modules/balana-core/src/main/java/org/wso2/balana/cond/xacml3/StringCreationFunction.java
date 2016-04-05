@@ -18,13 +18,31 @@
 
 package org.wso2.balana.cond.xacml3;
 
-import org.wso2.balana.attr.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.wso2.balana.attr.AnyURIAttribute;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.BooleanAttribute;
+import org.wso2.balana.attr.DNSNameAttribute;
+import org.wso2.balana.attr.DateAttribute;
+import org.wso2.balana.attr.DateTimeAttribute;
+import org.wso2.balana.attr.DayTimeDurationAttribute;
+import org.wso2.balana.attr.DoubleAttribute;
+import org.wso2.balana.attr.IPAddressAttribute;
+import org.wso2.balana.attr.IntegerAttribute;
+import org.wso2.balana.attr.RFC822NameAttribute;
+import org.wso2.balana.attr.StringAttribute;
+import org.wso2.balana.attr.TimeAttribute;
+import org.wso2.balana.attr.X500NameAttribute;
+import org.wso2.balana.attr.YearMonthDurationAttribute;
 import org.wso2.balana.cond.Evaluatable;
 import org.wso2.balana.cond.EvaluationResult;
 import org.wso2.balana.cond.FunctionBase;
 import org.wso2.balana.ctx.EvaluationCtx;
-
-import java.util.*;
 
 /**
  * String creation function that creates String from other data types
@@ -37,64 +55,64 @@ public class StringCreationFunction extends FunctionBase {
     public static final String NAME_STRING_FROM_BOOLEAN = FUNCTION_NS_3 + "string-from-boolean";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-double function.
      */
     public static final String NAME_STRING_FROM_DOUBLE= FUNCTION_NS_3 + "string-from-double";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-time function.
      */
     public static final String NAME_STRING_FROM_TIME = FUNCTION_NS_3 + "string-from-time";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-date function.
      */
-    public static final String NAME_STRING_FROM_DATE_TIME = FUNCTION_NS_3 + "string-from-date";
+    public static final String NAME_STRING_FROM_DATE = FUNCTION_NS_3 + "string-from-date";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the dateTime-from-string function.
      */
-    public static final String NAME_STRING_FROM_DATE= FUNCTION_NS_3 + "dateTime-from-string";
+    public static final String NAME_STRING_FROM_DATE_TIME= FUNCTION_NS_3 + "string-from-dateTime";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-integer function.
      */
     public static final String NAME_STRING_FROM_INTEGER = FUNCTION_NS_3 + "string-from-integer";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-anyURI function.
      */
     public static final String NAME_STRING_FROM_URI = FUNCTION_NS_3 + "string-from-anyURI";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-dayTimeDuration function.
      */
     public static final String NAME_STRING_FROM_DAYTIME_DURATION = FUNCTION_NS_3 +
                                                                     "string-from-dayTimeDuration";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-yearMonthDuration function.
      */
     public static final String NAME_STRING_FROM_YEAR_MONTH_DURATION = FUNCTION_NS_3 +
                                                                     "string-from-yearMonthDuration";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-x500Name function.
      */
     public static final String NAME_STRING_FROM_X500NAME = FUNCTION_NS_3 + "string-from-x500Name";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-rfc822Name function.
      */
     public static final String NAME_STRING_FROM_RFC822NAME = FUNCTION_NS_3 + "string-from-rfc822Name";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-dnsName function.
      */
     public static final String NAME_STRING_FROM_DNS = FUNCTION_NS_3 + "string-from-dnsName";
 
     /**
-     *  Standard identifier for the String-from-boolean function.
+     *  Standard identifier for the string-from-ipAddress function.
      */
     public static final String NAME_STRING_FROM_IP_ADDRESS = FUNCTION_NS_3 + "string-from-ipAddress";
 

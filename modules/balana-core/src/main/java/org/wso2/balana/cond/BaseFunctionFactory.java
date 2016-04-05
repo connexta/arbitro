@@ -35,11 +35,7 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ParsingException;
-import org.wso2.balana.UnknownIdentifierException;
-
 import java.net.URI;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -48,6 +44,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.UnknownIdentifierException;
 
 /**
  * This is a basic implementation of <code>FunctionFactory</code>. It implements the insertion and
@@ -68,7 +66,7 @@ import org.w3c.dom.Node;
 public class BaseFunctionFactory extends FunctionFactory {
 
     // the backing maps for the Function objects
-    private HashMap functionMap = null;
+    private HashMap functionMap = new HashMap();
 
     // the superset factory chained to this factory
     private FunctionFactory superset = null;
@@ -89,7 +87,6 @@ public class BaseFunctionFactory extends FunctionFactory {
      * @param superset the superset factory or null
      */
     public BaseFunctionFactory(FunctionFactory superset) {
-        functionMap = new HashMap();
 
         this.superset = superset;
     }
