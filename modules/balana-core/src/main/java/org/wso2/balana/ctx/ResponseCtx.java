@@ -35,20 +35,17 @@
 
 package org.wso2.balana.ctx;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
-import org.wso2.balana.ctx.xacml2.Result;
-
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
+
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.ctx.xacml2.Result;
 
 /**
  * Represents the response to a request made to the XACML PDP.
@@ -169,7 +166,7 @@ public class ResponseCtx {
 
     /**
      * Encodes this <code>ResponseCtx</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

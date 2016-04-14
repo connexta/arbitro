@@ -9,16 +9,14 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.*;
-
-import org.wso2.balana.attr.AttributeDesignatorFactory;
-import org.wso2.balana.attr.AttributeFactory;
-import org.wso2.balana.attr.AttributeSelector;
-
 import org.w3c.dom.Node;
+import org.wso2.balana.Balana;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.UnknownIdentifierException;
+import org.wso2.balana.attr.AttributeDesignatorFactory;
 import org.wso2.balana.attr.AttributeSelectorFactory;
-
-import java.net.URI;
 
 /**
  * This is a package-private utility class that handles parsing all the possible expression types.
@@ -43,7 +41,8 @@ public class ExpressionHandler {
      * 
      * @return an <code>Expression</code> or null if the root node cannot be parsed as a valid
      *         Expression
-     * @throws org.wso2.balana.ParsingException
+     * @throws org.wso2.balana.ParsingException if the node cannot be parsed
+     * @return returns an Expression parsed from a node
      */
     public static Expression parseExpression(Node root, PolicyMetaData metaData,
             VariableManager manager) throws ParsingException {
@@ -81,6 +80,12 @@ public class ExpressionHandler {
 
     /**
      * Helper method that tries to get a function instance
+
+     * @param root the Node which contains the function
+     * @param metaData The metadata used by the FunctionFactory to construct the function
+     * @param factory {@link FunctionFactory} which is used to constuct the function
+     * @return returns a Function parsed from the node
+     * @throws ParsingException if the node value is unable to be parsed
      */
     public static Function getFunction(Node root, PolicyMetaData metaData, FunctionFactory factory)
             throws ParsingException {

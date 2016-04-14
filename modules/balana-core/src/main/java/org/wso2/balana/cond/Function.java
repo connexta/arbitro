@@ -35,14 +35,10 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.Indenter;
-
 import java.net.URI;
-
-import java.io.OutputStream;
-
 import java.util.List;
+
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * Interface that all functions in the system must implement.
@@ -54,7 +50,7 @@ public interface Function extends Expression {
 
     /**
      * Evaluates the <code>Function</code> using the given inputs. The <code>List</code> contains
-     * <code>Evaluatable<code>s which are all
+     * <code>Evaluatable</code>s which are all
      * of the correct type if the <code>Function</code> has been created as part of an
      * <code>Apply</code> or <code>TargetMatch</code>, but which may otherwise be invalid. Each
      * parameter should be evaluated by the <code>Function</code>, unless the <code>Function</code>
@@ -69,6 +65,7 @@ public interface Function extends Expression {
      * checking that the inputs that it will pass to the <code>Function</code> provided as the first
      * parameter are valid, ie. it must do a <code>checkInputs</code> on its sub-function when
      * <code>checkInputs</code> is called on the higher-order function.
+     * </p>
      * 
      * @param inputs the <code>List</code> of inputs for the function
      * @param context the representation of the request
@@ -142,7 +139,7 @@ public interface Function extends Expression {
 
     /**
      * Encodes this <code>Function</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

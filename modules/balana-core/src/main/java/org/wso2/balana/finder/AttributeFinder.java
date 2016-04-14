@@ -35,27 +35,23 @@
 
 package org.wso2.balana.finder;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.attr.AttributeValue;
-import org.wso2.balana.ctx.EvaluationCtx;
-
-import org.wso2.balana.attr.BagAttribute;
-
-import org.wso2.balana.cond.EvaluationResult;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Node;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.BagAttribute;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * This class is used by the PDP to find attribute values that weren't originally supplied in the
  * request. It can be called with the data supplied in
- * <code>AttributeDesignator<code>s or <code>AttributeSelector</code>s. Because the modules in this
+ * <code>AttributeDesignator</code>s or <code>AttributeSelector</code>s. Because the modules in this
  * finder may themselves need attribute data to search for attribute data, it's possible that the
  * modules will look for values in the <code>EvaluationCtx</code>, which may in turn result in the
  * invocation of this finder again, so module writers need to be careful about how they build their
@@ -64,7 +60,7 @@ import org.w3c.dom.Node;
  * Note that unlike the PolicyFinder, this class doesn't always need to use every module it has to
  * find a value. The ordering is maintained, however, so it will always start with the first module,
  * and proceed in order until it finds a value or runs out of modules.
- * 
+ * </p>
  * @since 1.0
  * @author Seth Proctor
  */

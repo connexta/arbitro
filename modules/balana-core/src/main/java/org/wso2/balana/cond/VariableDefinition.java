@@ -35,15 +35,10 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.Indenter;
-import org.wso2.balana.ParsingException;
-import org.wso2.balana.PolicyMetaData;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
 
 /**
  * This class supports the VariableDefinitionType type introuced in XACML 2.0. It allows a Policy to
@@ -80,7 +75,8 @@ public class VariableDefinition {
      * @param root the DOM root of a VariableDefinitionType XML type
      * @param metaData the meta-data associated with the containing policy
      * @param manager <code>VariableManager</code> used to connect references to this definition
-     * 
+     *
+     * @return returns a new instance of the VariableDefintionType based on a DOM node
      * @throws ParsingException if the VariableDefinitionType is invalid
      */
     public static VariableDefinition getInstance(Node root, PolicyMetaData metaData,
@@ -131,7 +127,7 @@ public class VariableDefinition {
 
     /**
      * Encodes this <code>VariableDefinition</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -105,7 +105,7 @@ public class InputParser implements ErrorHandler {
      * Tries to Parse the given output as a Context document.
      * 
      * @param input the stream to parse
-     * @param rootTage either "Request" or "Response"
+     * @param rootTag either "Request" or "Response"
      * 
      * @return the root node of the request/response
      * 

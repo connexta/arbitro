@@ -18,20 +18,26 @@
 
 package org.wso2.balana.ctx.xacml3;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ObligationResult;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyReference;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.ctx.AbstractResult;
 import org.wso2.balana.ctx.Attribute;
 import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.AbstractResult;
 import org.wso2.balana.ctx.Status;
 import org.wso2.balana.xacml3.Advice;
 import org.wso2.balana.xacml3.Attributes;
 import org.wso2.balana.xacml3.Obligation;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.util.*;
 
 /**
  * XACML 3 implementation of  <code>AbstractResult</code>
@@ -54,12 +60,12 @@ public class Result extends AbstractResult{
 
     /**
      *
-     * @param decision
-     * @param status
-     * @param obligationResults
-     * @param advices
-     * @param evaluationCtx
-     * @throws IllegalArgumentException
+     * @param decision The decision contained within the result
+     * @param status The status of the result
+     * @param obligationResults the List of ObligationResults
+     * @param advices the advices within the result
+     * @param evaluationCtx The evaluationCtx to be used
+     * @throws IllegalArgumentException if the arguments are malformed
      */
     public Result(int decision, Status status, List<ObligationResult> obligationResults,
                   List<Advice> advices, EvaluationCtx evaluationCtx) throws IllegalArgumentException {
@@ -73,13 +79,13 @@ public class Result extends AbstractResult{
 
     /**
      *
-     * @param decision
-     * @param status
-     * @param obligationResults
-     * @param advices
-     * @param policyReferences
-     * @param attributes
-     * @throws IllegalArgumentException
+     * @param decision The decision contained within the result
+     * @param status The status of the result
+     * @param obligationResults the List of ObligationResults
+     * @param advices the advices within the result
+     * @param policyReferences The policy references
+     * @param attributes the attributes to be used
+     * @throws IllegalArgumentException if the arguments are malformed
      */
     public Result(int decision, Status status, List<ObligationResult> obligationResults,
                   List<Advice> advices, Set<PolicyReference> policyReferences, Set<Attributes> attributes)
@@ -276,7 +282,7 @@ public class Result extends AbstractResult{
 
     /**
      * Encodes this <code>Result</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

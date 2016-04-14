@@ -35,15 +35,14 @@
 
 package org.wso2.balana.finder;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.ctx.EvaluationCtx;
-
-import org.wso2.balana.attr.AttributeValue;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * This class is used by the PDP to handle resource scopes other than Immediate. In the case of a
@@ -106,7 +105,7 @@ public class ResourceFinder {
      * Sets the ordered <code>List</code> of <code>ResourceFinderModule</code>s used by this class
      * to find resources. The ordering will be maintained.
      * 
-     * @param modules a code>List</code> of <code>ResourceFinderModule</code>s
+     * @param modules a <code>List</code> of <code>ResourceFinderModule</code>s
      */
     public void setModules(List<ResourceFinderModule> modules) {
         Iterator it = modules.iterator();

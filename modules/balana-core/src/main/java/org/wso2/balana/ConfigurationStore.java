@@ -174,7 +174,9 @@ public class ConfigurationStore {
      * security model doesn't allow the use of properties, if you don't want to use a property to
      * specify a configuration file, or if you want to use more then one configuration file. If the
      * file can't be accessed, or if the file is invalid, then an exception is thrown.
-     * 
+     *
+     * @param configFile The file
+     *
      * @throws ParsingException if anything goes wrong during the parsing of the configuration file,
      *             the class loading, or the factory and pdp setup
      */
@@ -191,6 +193,8 @@ public class ConfigurationStore {
     /**
      * Private helper function used by both constructors to actually load the configuration data.
      * This is the root of several private methods used to setup all the pdps and factories.
+     *
+     * @param configFile The configuration {@link File} to be loaded
      */
     private void setupConfig(File configFile) throws ParsingException {
         logger.info("Loading runtime configuration");
@@ -733,8 +737,10 @@ public class ConfigurationStore {
     /**
      * Returns the PDP configuration with the given name. If no such configuration exists then an
      * exception is thrown.
-     * 
-     * @return the matching PDP configuation
+     *
+     * @param name The name of the desired {@link PDPConfig}
+     *
+     * @return the matching {@link PDPConfig}
      * 
      * @throws UnknownIdentifierException if the name is unknown
      */
@@ -768,7 +774,9 @@ public class ConfigurationStore {
     /**
      * Returns the attribute factory with the given name. If no such factory exists then an
      * exception is thrown.
-     * 
+     *
+     * @param name The name of the desired {@link AttributeFactory}
+     *
      * @return the matching attribute factory
      * 
      * @throws UnknownIdentifierException if the name is unknown
@@ -827,7 +835,9 @@ public class ConfigurationStore {
     /**
      * Returns the combiningAlg factory with the given name. If no such factory exists then an
      * exception is thrown.
-     * 
+     *
+     * @param name The name of the {@link CombiningAlgFactory}
+     *
      * @return the matching combiningAlg factory
      * 
      * @throws UnknownIdentifierException if the name is unknown
@@ -886,7 +896,9 @@ public class ConfigurationStore {
     /**
      * Returns the function factory proxy with the given name. If no such proxy exists then an
      * exception is thrown.
-     * 
+     *
+     * @param name the name of the {@link FunctionFactoryProxy}
+     *
      * @return the matching function factory proxy
      * 
      * @throws UnknownIdentifierException if the name is unknown

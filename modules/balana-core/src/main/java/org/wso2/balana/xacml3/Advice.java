@@ -18,19 +18,16 @@
 
 package org.wso2.balana.xacml3;
 
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.wso2.balana.DOMHelper;
-import org.wso2.balana.Indenter;
 import org.wso2.balana.ParsingException;
 import org.wso2.balana.ctx.AttributeAssignment;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Represents the AdviceType XML type in XACML. Advice are introduced with XACML 3
@@ -121,7 +118,7 @@ public class Advice {
 
     /**
      * Encodes this <code>Advice</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

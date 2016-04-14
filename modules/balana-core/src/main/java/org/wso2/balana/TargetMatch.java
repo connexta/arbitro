@@ -35,29 +35,28 @@
 
 package org.wso2.balana;
 
-import org.wso2.balana.attr.*;
-
-import org.wso2.balana.cond.Evaluatable;
-import org.wso2.balana.cond.EvaluationResult;
-import org.wso2.balana.cond.Function;
-import org.wso2.balana.cond.FunctionFactory;
-import org.wso2.balana.cond.FunctionTypeException;
-
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.Status;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.attr.AttributeDesignatorFactory;
+import org.wso2.balana.attr.AttributeFactory;
+import org.wso2.balana.attr.AttributeSelectorFactory;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.BagAttribute;
+import org.wso2.balana.attr.BooleanAttribute;
+import org.wso2.balana.attr.StringAttribute;
+import org.wso2.balana.cond.Evaluatable;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.cond.Function;
+import org.wso2.balana.cond.FunctionFactory;
+import org.wso2.balana.cond.FunctionTypeException;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
 
 /**
  * Represents the SubjectMatch, ResourceMatch, ActionMatch, or EnvironmentMatch (in XACML 2.0 and
@@ -409,7 +408,7 @@ public class TargetMatch {
 
     /**
      * Encodes this <code>TargetMatch</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

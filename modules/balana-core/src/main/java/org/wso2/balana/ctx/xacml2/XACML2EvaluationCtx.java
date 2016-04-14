@@ -59,7 +59,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
     // the resource and its scope
     private AttributeValue resourceId;
     private int scope;
-    
+
     private RequestCtx requestCtx;
 
     //private Set<ObligationResult>  obligationResults;
@@ -265,6 +265,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      * multiple resources (ie, a scope other than IMMEDIATE), and you need to keep changing only the
      * resource-id to evaluate the different effective requests.
      *
+     * @param attributesSet The attributes to be added to the ResourceId
      * @param resourceId the new resource-id value
      */
     public void setResourceId(AttributeValue resourceId, Set<Attributes> attributesSet) {
@@ -334,6 +335,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      * @param type   the type of the attribute value(s) to find
      * @param id     the id of the attribute value(s) to find
      * @param issuer the issuer of the attribute value(s) to find or null
+     * @param category the category of the attribute
      * @return a result containing a bag either empty because no values were found or containing at
      *         least one value, or status associated with an Indeterminate result
      */
@@ -346,6 +348,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      *
      * @param type   the type of the attribute value(s) to find
      * @param id     the id of the attribute value(s) to find
+     * @param category the category of the attribute
      * @param issuer the issuer of the attribute value(s) to find or null
      * @return a result containing a bag either empty because no values were found or containing at
      *         least one value, or status associated with an Indeterminate result
@@ -359,6 +362,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      *
      * @param type   the type of the attribute value(s) to find
      * @param id     the id of the attribute value(s) to find
+     * @param category the category of the attribute
      * @param issuer the issuer of the attribute value(s) to find or null
      * @return a result containing a bag either empty because no values were found or containing at
      *         least one value, or status associated with an Indeterminate result

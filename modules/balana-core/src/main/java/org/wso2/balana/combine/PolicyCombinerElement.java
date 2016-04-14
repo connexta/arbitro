@@ -35,17 +35,13 @@
 
 package org.wso2.balana.combine;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.wso2.balana.AbstractPolicy;
-import org.wso2.balana.Indenter;
 import org.wso2.balana.Policy;
 import org.wso2.balana.PolicyReference;
 import org.wso2.balana.PolicySet;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Specific version of <code>CombinerElement</code> used for policy combining.
@@ -56,7 +52,7 @@ import java.util.List;
 public class PolicyCombinerElement extends CombinerElement {
 
     /**
-     * Constructor that only takes an <code>AbstractPolicy</code. No parameters are associated with
+     * Constructor that only takes an <code>AbstractPolicy</code>. No parameters are associated with
      * this <code>AbstractPolicy</code> when combining.
      * 
      * @param policy an <code>AbstractPolicy</code> to use in combining
@@ -71,7 +67,7 @@ public class PolicyCombinerElement extends CombinerElement {
      * 
      * @param policy an <code>AbstractPolicy</code> to use in combining
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s provided for general
+     *            <code>CombinerParameter</code>s provided for general
      *                   use (for all pre-2.0 policies this must be empty)
      */
     public PolicyCombinerElement(AbstractPolicy policy, List parameters) {
@@ -89,7 +85,7 @@ public class PolicyCombinerElement extends CombinerElement {
 
     /**
      * Encodes this <code>PolicyCombinerElement</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -35,22 +35,15 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.Indenter;
-
-import org.wso2.balana.attr.AttributeValue;
-
-import org.wso2.balana.ctx.Status;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
 
 /**
  * An abstract utility superclass for functions. Supplies several useful methods, making it easier
@@ -338,7 +331,7 @@ public abstract class FunctionBase implements Function {
      * constructor used. If you need anything more complex, or if you used the simple constructor,
      * then you must override this method.
      * 
-     * @param inputs a <code>List></code> of <code>Evaluatable</code>s
+     * @param inputs a <code>List</code> of <code>Evaluatable</code>s
      * 
      * @throws IllegalArgumentException if the inputs won't work
      */
@@ -389,7 +382,7 @@ public abstract class FunctionBase implements Function {
      * constructor used. If you need anything more complex, or if you used the simple constructor,
      * then you must override this method.
      * 
-     * @param inputs a <code>List></code> of <code>Evaluatable</code>s
+     * @param inputs a <code>List</code> of <code>Evaluatable</code>s
      * 
      * @throws IllegalArgumentException if the inputs won't work
      */
@@ -450,7 +443,7 @@ public abstract class FunctionBase implements Function {
 
     /**
      * Encodes this <code>FunctionBase</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

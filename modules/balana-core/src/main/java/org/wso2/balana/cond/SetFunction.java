@@ -35,25 +35,25 @@
 
 package org.wso2.balana.cond;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.wso2.balana.attr.AnyURIAttribute;
 import org.wso2.balana.attr.Base64BinaryAttribute;
 import org.wso2.balana.attr.BooleanAttribute;
+import org.wso2.balana.attr.DNSNameAttribute;
 import org.wso2.balana.attr.DateAttribute;
 import org.wso2.balana.attr.DateTimeAttribute;
 import org.wso2.balana.attr.DayTimeDurationAttribute;
-import org.wso2.balana.attr.DNSNameAttribute;
 import org.wso2.balana.attr.DoubleAttribute;
 import org.wso2.balana.attr.HexBinaryAttribute;
-import org.wso2.balana.attr.IntegerAttribute;
 import org.wso2.balana.attr.IPAddressAttribute;
+import org.wso2.balana.attr.IntegerAttribute;
 import org.wso2.balana.attr.RFC822NameAttribute;
 import org.wso2.balana.attr.StringAttribute;
 import org.wso2.balana.attr.TimeAttribute;
 import org.wso2.balana.attr.X500NameAttribute;
 import org.wso2.balana.attr.YearMonthDurationAttribute;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Represents all of the Set functions, though the actual implementations are in two sub-classes
@@ -67,35 +67,35 @@ public abstract class SetFunction extends FunctionBase {
     /**
      * Base name for the type-intersection funtions. To get the standard identifier for a given
      * type, use <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g.,
-     * <code>string</code>) + </code>NAME_BASE_INTERSECTION</code>.
+     * <code>string</code>) + <code>NAME_BASE_INTERSECTION</code>.
      */
     public static final String NAME_BASE_INTERSECTION = "-intersection";
 
     /**
      * Base name for the type-at-least-one-member-of funtions. To get the standard identifier for a
      * given type, use <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g.,
-     * <code>string</code>) + </code>NAME_BASE_AT_LEAST_ONE_MEMBER_OF</code>.
+     * <code>string</code>) + <code>NAME_BASE_AT_LEAST_ONE_MEMBER_OF</code>.
      */
     public static final String NAME_BASE_AT_LEAST_ONE_MEMBER_OF = "-at-least-one-member-of";
 
     /**
      * Base name for the type-union funtions. To get the standard identifier for a given type, use
      * <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g., <code>string</code>)
-     * + </code>NAME_BASE_UNION</code>.
+     * + <code>NAME_BASE_UNION</code>.
      */
     public static final String NAME_BASE_UNION = "-union";
 
     /**
      * Base name for the type-subset funtions. To get the standard identifier for a given type, use
      * <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g., <code>string</code>)
-     * + </code>NAME_BASE_SUBSET</code>.
+     * + <code>NAME_BASE_SUBSET</code>.
      */
     public static final String NAME_BASE_SUBSET = "-subset";
 
     /**
      * Base name for the type-set-equals funtions. To get the standard identifier for a given type,
      * use <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g.,
-     * <code>string</code>) + </code>NAME_BASE_SET_EQUALS</code>.
+     * <code>string</code>) + <code>NAME_BASE_SET_EQUALS</code>.
      */
     public static final String NAME_BASE_SET_EQUALS = "-set-equals";
 

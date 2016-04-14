@@ -18,9 +18,9 @@
 
 package org.wso2.balana;
 
-import org.wso2.balana.ctx.EvaluationCtx;
-
 import java.net.URI;
+
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * Represents ObligationType in the XACML 2.0 and  ObligationExpressionType in the XACML 2.0
@@ -69,7 +69,7 @@ public abstract class AbstractObligation {
 
     /**
      * Encodes this <code>ObligationResult</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -35,27 +35,22 @@
 
 package org.wso2.balana.attr;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.*;
-
-import org.wso2.balana.cond.EvaluationResult;
-
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.MissingAttributeDetail;
-import org.wso2.balana.ctx.Status;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.MissingAttributeDetail;
+import org.wso2.balana.ctx.Status;
 import org.wso2.balana.ctx.StatusDetail;
 
 /**
@@ -151,6 +146,7 @@ public class AttributeDesignator extends AbstractDesignator {
      * @param id            the attribute id looked for by this designator
      * @param mustBePresent whether resolution must find a value
      * @param issuer        the issuer of the values to search for or null if no issuer is specified
+     * @param category      the category of the for the attribute designator
      * @throws IllegalArgumentException if the input target isn't a valid value
      */
     public AttributeDesignator(int target, URI type, URI id, boolean mustBePresent, String issuer,
@@ -427,7 +423,7 @@ public class AttributeDesignator extends AbstractDesignator {
 
     /**
      * Encodes this <code>AttributeDesignator</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

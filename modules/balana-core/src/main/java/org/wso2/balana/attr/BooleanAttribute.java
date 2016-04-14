@@ -35,11 +35,10 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ParsingException;
-
 import java.net.URI;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
 
 /**
  * Representation of an xs:boolean value. This class supports parsing xs:boolean values. All objects
@@ -125,6 +124,8 @@ public class BooleanAttribute extends AttributeValue {
      * node.
      * 
      * @param root the <code>Node</code> that contains the desired value
+     *
+     * @throws  ParsingException if the root value does not equal "true" or "false"
      * @return a <code>BooleanAttribute</code> representing the appropriate value (null if there is
      *         a parsing error)
      */
@@ -137,6 +138,8 @@ public class BooleanAttribute extends AttributeValue {
      * string provided.
      * 
      * @param value a string representing the desired value
+     * @throws  ParsingException if the root value does not equal "true" or "false"
+     *
      * @return a <code>BooleanAttribute</code> representing the appropriate value (null if there is
      *         a parsing error)
      */

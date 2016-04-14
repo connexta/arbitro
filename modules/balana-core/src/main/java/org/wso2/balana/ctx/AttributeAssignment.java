@@ -18,19 +18,13 @@
 
 package org.wso2.balana.ctx;
 
+import java.net.URI;
+
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.wso2.balana.DOMHelper;
-import org.wso2.balana.Indenter;
 import org.wso2.balana.ParsingException;
-import org.wso2.balana.attr.AttributeFactory;
 import org.wso2.balana.attr.AttributeValue;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.net.URI;
 
 /**
  * Represents AttributeAssignmentType in the XACML 3.0 and 2.0 policy schema
@@ -150,7 +144,7 @@ public class AttributeAssignment extends AttributeValue {
 
     /**
      * Encodes this <code>AttributeAssignment</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

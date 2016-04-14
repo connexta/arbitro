@@ -35,33 +35,29 @@
 
 package org.wso2.balana;
 
-import org.wso2.balana.ctx.AbstractResult;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.ResultFactory;
-import org.wso2.balana.ctx.xacml2.Result;
-import org.wso2.balana.xacml3.Advice;
-import org.wso2.balana.xacml3.AdviceExpression;
-import org.wso2.balana.attr.BooleanAttribute;
-
-import org.wso2.balana.cond.Apply;
-import org.wso2.balana.cond.Condition;
-import org.wso2.balana.cond.EvaluationResult;
-import org.wso2.balana.cond.VariableManager;
-
-import org.wso2.balana.ctx.Status;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.wso2.balana.xacml3.ObligationExpression;
+import org.wso2.balana.attr.BooleanAttribute;
+import org.wso2.balana.cond.Apply;
+import org.wso2.balana.cond.Condition;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.cond.VariableManager;
+import org.wso2.balana.ctx.AbstractResult;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.ResultFactory;
+import org.wso2.balana.ctx.Status;
+import org.wso2.balana.ctx.xacml2.Result;
+import org.wso2.balana.xacml3.Advice;
+import org.wso2.balana.xacml3.AdviceExpression;
 
 /**
  * Represents the RuleType XACML type. This has a target for matching, and encapsulates the
@@ -173,6 +169,8 @@ public class Rule implements PolicyTreeElement {
      *            this is unspecified (ie, not supplied in the defaults section of the policy)
      * 
      * @throws ParsingException if the RuleType is invalid
+     *
+     * @return returns an instance of the {@link Rule} based on the DOM node.
      */
     public static Rule getInstance(Node root, String xpathVersion) throws ParsingException {
         return getInstance(root, new PolicyMetaData(XACMLConstants.XACML_1_0_IDENTIFIER,
@@ -186,10 +184,12 @@ public class Rule implements PolicyTreeElement {
      * @param root the DOM root of a RuleType XML type
      * @param metaData the meta-data associated with this Rule's policy
      * @param manager the <code>VariableManager</code> used to connect
-     *            <code>VariableReference</code>s to their cooresponding
-     *            <code>VariableDefinition<code>s
+     *            <code>VariableReference</code>s to their corresponding
+     *            <code>VariableDefinition</code>s
      * 
      * @throws ParsingException if the RuleType is invalid
+     *
+     * @return returns an instance of the {@link Rule} based on the DOM node.
      */
     public static Rule getInstance(Node root, PolicyMetaData metaData, VariableManager manager)
             throws ParsingException {

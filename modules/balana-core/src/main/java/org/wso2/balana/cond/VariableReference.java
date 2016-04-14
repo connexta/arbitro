@@ -109,8 +109,11 @@ public class VariableReference implements Expression, Evaluatable {
      *
      * @param root     the DOM root of a VariableReferenceType XML type
      * @param metaData the meta-data associated with the containing policy
-     * @param manager  the <code>VariableManager</code> used to connect this reference to its
-     *                 definition
+     * @param manager the <code>VariableManager</code> used to connect this reference to its
+     *            definition
+     *
+     * @return Returns a new instance of the <code>VariableReference</code> class based on a DOM node.
+     *
      * @throws ParsingException if the VariableReferenceType is invalid
      */
     public static VariableReference getInstance(Node root, PolicyMetaData metaData,
@@ -158,6 +161,7 @@ public class VariableReference implements Expression, Evaluatable {
      * then this will throw an exception.
      *
      * @param context the representation of the request
+     * 
      * @return the result of evaluation
      */
     public EvaluationResult evaluate(EvaluationCtx context) {
@@ -176,6 +180,7 @@ public class VariableReference implements Expression, Evaluatable {
      * Returns the type of the referenced expression.
      *
      * @return the attribute return type of the referenced expression
+     * 
      * @throws ProcessingException if the type couldn't be resolved
      */
     public URI getType() {
@@ -197,6 +202,7 @@ public class VariableReference implements Expression, Evaluatable {
      * Tells whether evaluation will return a bag or a single value.
      *
      * @return true if evaluation will return a bag, false otherwise
+     * 
      * @throws ProcessingException if the return type couldn't be resolved
      */
     public boolean returnsBag() {
@@ -248,7 +254,7 @@ public class VariableReference implements Expression, Evaluatable {
 
     /**
      * Encodes this <code>VariableReference</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -18,10 +18,10 @@
 
 package org.wso2.balana.xacml3;
 
+import java.util.Set;
+
 import org.wso2.balana.ctx.EvaluationCtx;
 import org.wso2.balana.ctx.Status;
-
-import java.util.Set;
 
 /**
  * This is used in cases where a normal result is Set of contexts, but if an context couldn't
@@ -57,7 +57,7 @@ public class MultipleCtxResult {
      /**
      * Constructs a <code>MultipleCtxResult</code> object with status error
      *
-      * @param status  <code>Status<code>
+      * @param status  <code>Status</code>
       */
     public MultipleCtxResult(Status status) {
         this(null, status, true);
@@ -67,7 +67,7 @@ public class MultipleCtxResult {
      * Constructs a <code>MultipleCtxResult</code> object with  required data
      *
      * @param evaluationCtxSet  A ,<code>Set</code> of <code>EvaluationCtx</code>
-     * @param status   <code>Status<code>
+     * @param status   <code>Status</code>
      * @param indeterminate  whether any indeterminate has occurred or not
      */
     public MultipleCtxResult(Set<EvaluationCtx> evaluationCtxSet, Status status, boolean indeterminate) {

@@ -384,7 +384,7 @@ public class PolicySet extends AbstractPolicy {
 
     /**
      * Encodes this <code>PolicySet</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

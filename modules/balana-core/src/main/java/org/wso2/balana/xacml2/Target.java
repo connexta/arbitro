@@ -35,16 +35,18 @@
 
 package org.wso2.balana.xacml2;
 
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.util.HashSet;
-import java.util.Set;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
+import org.wso2.balana.AbstractTarget;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.MatchResult;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.ProcessingException;
+import org.wso2.balana.TargetMatch;
+import org.wso2.balana.XACMLConstants;
 import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
@@ -145,7 +147,7 @@ public class Target extends AbstractTarget {
      * Creates a <code>Target</code> by parsing a node.
      * 
      * @param root the node to parse for the <code>Target</code>
-     * @param metaData
+     * @param metaData The metadata associated with the policy
      * @return a new <code>Target</code> constructed by parsing
      * 
      * @throws ParsingException if the DOM node is invalid
@@ -329,7 +331,7 @@ public class Target extends AbstractTarget {
 
     /**
      * Encodes this <code>Target</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */
