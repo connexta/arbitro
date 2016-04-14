@@ -35,20 +35,18 @@
 
 package org.wso2.balana.combine.xacml2;
 
-import org.wso2.balana.combine.RuleCombinerElement;
-import org.wso2.balana.combine.RuleCombiningAlgorithm;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.ResultFactory;
-import org.wso2.balana.Rule;
-
-import org.wso2.balana.ctx.AbstractResult;
-import org.wso2.balana.ctx.xacml2.Result;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.Iterator;
 import java.util.List;
+
+import org.wso2.balana.Rule;
+import org.wso2.balana.combine.RuleCombinerElement;
+import org.wso2.balana.combine.RuleCombiningAlgorithm;
+import org.wso2.balana.ctx.AbstractResult;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.ResultFactory;
+import org.wso2.balana.ctx.xacml2.Result;
 
 /**
  * This is the standard First Applicable rule combining algorithm. It looks through the set of
@@ -94,7 +92,7 @@ public class FirstApplicableRuleAlg extends RuleCombiningAlgorithm {
      * 
      * @param context the context from the request
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s
+     *            <code>CombinerParameter</code>s
      * @param ruleElements the rules to combine
      * 
      * @return the result of running the combining algorithm

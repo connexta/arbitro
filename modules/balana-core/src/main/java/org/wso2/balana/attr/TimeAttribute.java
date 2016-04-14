@@ -35,16 +35,13 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ParsingException;
-import org.wso2.balana.ProcessingException;
-
 import java.net.URI;
-
 import java.text.ParseException;
-
 import java.util.Date;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.ProcessingException;
 
 /**
  * Representation of an xs:time value. This class supports parsing xs:time values. All objects of
@@ -229,6 +226,9 @@ public class TimeAttribute extends AttributeValue {
      * node.
      * 
      * @param root the <code>Node</code> that contains the desired value
+     * @throws ParsingException if the node value contains malformed text
+     * @throws NumberFormatException if the node value does proper number values for a TimeAttribute
+     * @throws ParseException if the node value contains malformed text
      * @return a new <code>TimeAttribute</code> representing the appropriate value (null if there is
      *         a parsing error)
      */
@@ -242,9 +242,10 @@ public class TimeAttribute extends AttributeValue {
      * string provided.
      * 
      * @param value a string representing the desired value
-     * @return a new <code>TimeAttribute</code> representing the desired value (null if there is a
-     *         parsing error)
+     * @return a new <code>TimeAttribute</code> representing the desired value (null if there is a parsing error)
+     * @throws NumberFormatException if the node value does proper number values for a TimeAttribute
      * @throws ParsingException if any problems occurred while parsing
+     * @throws ParseException if the node value contains malformed text
      */
     public static TimeAttribute getInstance(String value) throws ParsingException,
             NumberFormatException, ParseException {

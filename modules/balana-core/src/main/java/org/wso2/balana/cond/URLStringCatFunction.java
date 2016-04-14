@@ -35,20 +35,17 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ctx.EvaluationCtx;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import org.wso2.balana.attr.AnyURIAttribute;
 import org.wso2.balana.attr.AttributeValue;
 import org.wso2.balana.attr.StringAttribute;
-
+import org.wso2.balana.ctx.EvaluationCtx;
 import org.wso2.balana.ctx.Status;
-
-import java.net.URI;
-import java.net.URISyntaxException;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Represents the XACML 2.0 url-string-concatenate function.
@@ -74,7 +71,7 @@ public class URLStringCatFunction extends FunctionBase {
 	/**
 	 * Checks the inputs of this function.
 	 * 
-	 * @param inputs a <code>List></code> of <code>Evaluatable</code>s
+	 * @param inputs a <code>List</code> of <code>Evaluatable</code>s
 	 * 
 	 * @throws IllegalArgumentException if the inputs won't work
 	 */
@@ -94,7 +91,7 @@ public class URLStringCatFunction extends FunctionBase {
 	/**
 	 * Checks the inputs of this function assuming no parameters are bags.
 	 * 
-	 * @param inputs a <code>List></code> of <code>Evaluatable</code>s
+	 * @param inputs a <code>List</code> of <code>Evaluatable</code>s
 	 * 
 	 * @throws IllegalArgumentException if the inputs won't work
 	 */

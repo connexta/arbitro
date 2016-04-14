@@ -35,14 +35,11 @@
 
 package org.wso2.balana;
 
+import java.net.URI;
+import java.util.List;
+
 import org.wso2.balana.ctx.AbstractResult;
 import org.wso2.balana.ctx.EvaluationCtx;
-
-import java.io.OutputStream;
-
-import java.net.URI;
-
-import java.util.List;
 
 /**
  * This represents a single node in a policy tree. A node is either a policy set, a policy, or a
@@ -115,7 +112,7 @@ public interface PolicyTreeElement {
 
     /**
      * Encodes this <code>PolicyTreeElement</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

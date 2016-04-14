@@ -35,16 +35,7 @@
 
 package org.wso2.balana;
 
-import org.wso2.balana.combine.CombinerElement;
-import org.wso2.balana.combine.CombinerParameter;
-import org.wso2.balana.combine.RuleCombinerElement;
-import org.wso2.balana.combine.RuleCombiningAlgorithm;
-
-import org.wso2.balana.cond.VariableDefinition;
-import org.wso2.balana.cond.VariableManager;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -54,6 +45,12 @@ import java.util.Set;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.combine.CombinerElement;
+import org.wso2.balana.combine.CombinerParameter;
+import org.wso2.balana.combine.RuleCombinerElement;
+import org.wso2.balana.combine.RuleCombiningAlgorithm;
+import org.wso2.balana.cond.VariableDefinition;
+import org.wso2.balana.cond.VariableManager;
 
 /**
  * Represents one of the two top-level constructs in XACML, the PolicyType. This optionally contains
@@ -404,7 +401,7 @@ public class Policy extends AbstractPolicy {
 
     /**
      * Encodes this <code>Policy</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

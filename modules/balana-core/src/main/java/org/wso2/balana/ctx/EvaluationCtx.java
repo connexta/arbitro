@@ -35,16 +35,14 @@
 
 package org.wso2.balana.ctx;
 
-import org.wso2.balana.xacml3.MultipleCtxResult;
-import org.wso2.balana.attr.DateAttribute;
-import org.wso2.balana.attr.DateTimeAttribute;
-import org.wso2.balana.attr.TimeAttribute;
-
-import org.wso2.balana.cond.EvaluationResult;
-
 import java.net.URI;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.attr.DateAttribute;
+import org.wso2.balana.attr.DateTimeAttribute;
+import org.wso2.balana.attr.TimeAttribute;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.xacml3.MultipleCtxResult;
 
 /**
  * Manages the context of a single policy evaluation. Typically, an instance is instantiated
@@ -71,7 +69,7 @@ public interface EvaluationCtx {
 
     /**
      * TODO what is this ?
-     * @return
+     * @return returns a boolean which indicates if a search is in progress
      */
     public boolean isSearching();
 

@@ -70,7 +70,7 @@ public class IPv6AddressAttribute extends IPAddressAttribute {
      * Creates the new <code>IPv6AddressAttribute</code> with the optional port range.
      * 
      * @param address a non-null <code>InetAddress</code>
-     * @param portRange a non-null <code>PortRange</code>
+     * @param range a non-null <code>PortRange</code>
      */
     public IPv6AddressAttribute(InetAddress address, PortRange range) {
         this(address, null, range);
@@ -81,7 +81,7 @@ public class IPv6AddressAttribute extends IPAddressAttribute {
      * 
      * @param address a non-null <code>InetAddress</code>
      * @param mask an <code>InetAddress</code> or null if there is no mask
-     * @param portRange a non-null <code>PortRange</code>
+     * @param range a non-null <code>PortRange</code>
      */
     public IPv6AddressAttribute(InetAddress address, InetAddress mask, PortRange range) {
         super(address, mask, range);
@@ -99,7 +99,6 @@ public class IPv6AddressAttribute extends IPAddressAttribute {
      * @return a new <code>IPAddressAttribute</code>
      * 
      * @throws UnknownHostException if the address components is invalid
-     * @throws ParsingException if any of the address components is invalid
      */
     protected static IPAddressAttribute getV6Instance(String value) throws UnknownHostException {
         InetAddress address = null;

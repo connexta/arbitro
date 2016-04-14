@@ -35,13 +35,11 @@
 
 package org.wso2.balana.combine;
 
-import org.wso2.balana.ctx.EvaluationCtx;
+import java.net.URI;
+import java.util.List;
 
 import org.wso2.balana.ctx.AbstractResult;
-
-import java.net.URI;
-
-import java.util.List;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * The base type for all combining algorithms. It provides one method that must be implemented.
@@ -69,7 +67,7 @@ public abstract class CombiningAlgorithm {
      * 
      * @param context the representation of the request
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s provided for general
+     *            <code>CombinerParameter</code>s provided for general
      *                   use (for all pre-2.0 policies this must be empty)
      * @param inputs a <code>List</code> of <code>CombinerElements</code>s to evaluate and combine
      * 

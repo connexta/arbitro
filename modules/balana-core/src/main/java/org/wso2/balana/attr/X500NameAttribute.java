@@ -102,7 +102,7 @@ public class X500NameAttribute extends AttributeValue {
     }
 
     /**
-     * Returns a new <codeX500NameAttribute</code> that represents the X500 Name at a particular DOM
+     * Returns a new <code>X500NameAttribute</code> that represents the X500 Name at a particular DOM
      * node.
      * 
      * @param root the <code>Node</code> that contains the desired value

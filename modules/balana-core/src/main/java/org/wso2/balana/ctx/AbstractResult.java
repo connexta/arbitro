@@ -19,12 +19,11 @@
 
 package org.wso2.balana.ctx;
 
-import org.wso2.balana.*;
-import org.wso2.balana.xacml3.Advice;
-
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.wso2.balana.ObligationResult;
+import org.wso2.balana.xacml3.Advice;
 
 /**
  * Abstract Represents the ResultType XML object from the Context schema. Any number
@@ -239,7 +238,7 @@ public abstract class AbstractResult {
 
     /**
      * Encodes this <code>AbstractResult</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

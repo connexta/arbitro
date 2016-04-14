@@ -35,18 +35,32 @@
 
 package org.wso2.balana.attr;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.UnknownIdentifierException;
-
-import org.wso2.balana.XACMLConstants;
-import org.wso2.balana.attr.proxy.*;
-import org.wso2.balana.attr.proxy.xacml3.XPathAttributeProxy;
-import org.wso2.balana.attr.xacml3.XPathAttribute;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.wso2.balana.UnknownIdentifierException;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.attr.proxy.AnyURIAttributeProxy;
+import org.wso2.balana.attr.proxy.Base64BinaryAttributeProxy;
+import org.wso2.balana.attr.proxy.BooleanAttributeProxy;
+import org.wso2.balana.attr.proxy.DNSNameAttributeProxy;
+import org.wso2.balana.attr.proxy.DateAttributeProxy;
+import org.wso2.balana.attr.proxy.DateTimeAttributeProxy;
+import org.wso2.balana.attr.proxy.DayTimeDurationAttributeProxy;
+import org.wso2.balana.attr.proxy.DoubleAttributeProxy;
+import org.wso2.balana.attr.proxy.HexBinaryAttributeProxy;
+import org.wso2.balana.attr.proxy.IPAddressAttributeProxy;
+import org.wso2.balana.attr.proxy.IntegerAttributeProxy;
+import org.wso2.balana.attr.proxy.RFC822NameAttributeProxy;
+import org.wso2.balana.attr.proxy.StringAttributeProxy;
+import org.wso2.balana.attr.proxy.TimeAttributeProxy;
+import org.wso2.balana.attr.proxy.X500NameAttributeProxy;
+import org.wso2.balana.attr.proxy.YearMonthDurationAttributeProxy;
+import org.wso2.balana.attr.proxy.xacml3.XPathAttributeProxy;
+import org.wso2.balana.attr.xacml3.XPathAttribute;
 
 /**
  * This factory supports the standard set of datatypes specified in XACML 1.x and 2.0. It is the
@@ -151,7 +165,7 @@ public class StandardAttributeFactory extends BaseAttributeFactory {
     }
 
     /**
-     * A convenience method that returns a new instance of an <codeAttributeFactory</code> that
+     * A convenience method that returns a new instance of an <code>AttributeFactory</code> that
      * supports all of the standard datatypes. The new factory allows adding support for new
      * datatypes. This method should only be used when you need a new, mutable instance (eg, when
      * you want to create a new factory that extends the set of supported datatypes). In general,

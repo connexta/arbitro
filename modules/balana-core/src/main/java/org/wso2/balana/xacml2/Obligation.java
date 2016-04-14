@@ -18,23 +18,27 @@
 
 package org.wso2.balana.xacml2;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
-import org.wso2.balana.attr.AttributeFactory;
-import org.wso2.balana.attr.AttributeValue;
-import org.wso2.balana.ctx.Attribute;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.xacml2.Result;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.wso2.balana.AbstractObligation;
+import org.wso2.balana.Balana;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ObligationResult;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.UnknownIdentifierException;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.attr.AttributeFactory;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.ctx.Attribute;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.xacml2.Result;
 
 /**
  * Represents ObligationType in the XACML 2.0 policy schema. In XACML 2.0, this element represent both
@@ -155,7 +159,7 @@ public class Obligation extends AbstractObligation implements ObligationResult {
 
     /**
      * Encodes this <code>Obligation</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

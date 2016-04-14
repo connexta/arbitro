@@ -35,21 +35,21 @@
 
 package org.wso2.balana.ctx.xacml2;
 
-import org.wso2.balana.DOMHelper;
-import org.wso2.balana.ctx.Attribute;
-import org.wso2.balana.Indenter;
-import org.wso2.balana.ParsingException;
-
 import java.io.OutputStream;
 import java.io.PrintStream;
-
 import java.net.URI;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.Indenter;
+import org.wso2.balana.ParsingException;
 import org.wso2.balana.XACMLConstants;
-import org.wso2.balana.ctx.*;
+import org.wso2.balana.ctx.AbstractRequestCtx;
+import org.wso2.balana.ctx.Attribute;
 import org.wso2.balana.xacml3.Attributes;
 
 /**
@@ -78,10 +78,11 @@ public class RequestCtx extends AbstractRequestCtx {
 
     // There may be any number of environment attributes
     private Set environment = null;
-    
+
     /**
-     * Constructor that creates a <code>RequestCtx</code> from components.
      *
+     * @param attributesSet Set of Attributes for the request
+     * @param documentRoot the root node of the DOM tree for this request
      */
     public RequestCtx(Set<Attributes> attributesSet, Node documentRoot) {
         this(attributesSet, documentRoot, null);
@@ -91,6 +92,7 @@ public class RequestCtx extends AbstractRequestCtx {
     /**
      * Constructor that creates a <code>RequestCtx</code> from components.
      *
+     * @param attributesSet Set of Attributes for the request
      * @param documentRoot the root node of the DOM tree for this request
      * @param version xacml version of the request
      */
@@ -101,6 +103,7 @@ public class RequestCtx extends AbstractRequestCtx {
     /**
      * Constructor that creates a <code>RequestCtx</code> from components.
      *
+     * @param attributesSet Set of Attributes for the request
      * @param resourceContent a text-encoded version of the content, suitable for including in the
      *            RequestType, including the root <code>RequestContent</code> node
      */
@@ -111,7 +114,7 @@ public class RequestCtx extends AbstractRequestCtx {
     /**
      * Constructor that creates a <code>RequestCtx</code> from components.
      *
-     * @param attributesSet
+     * @param attributesSet Set of Attributes for the request
      * @param documentRoot the root node of the DOM tree for this request
      * @param resourceContent a text-encoded version of the content, suitable for including in the
      *            RequestType, including the root <code>RequestContent</code> node
@@ -129,11 +132,11 @@ public class RequestCtx extends AbstractRequestCtx {
 
     /**
      *
-     * @param subjects
-     * @param resource
-     * @param action
-     * @param environment
-     * @throws IllegalArgumentException
+     * @param subjects The subjects in the request
+     * @param resource The resource for the request
+     * @param action The action to be taken for the request
+     * @param environment The environment specified to the pdp within the request
+     * @throws IllegalArgumentException if the inputs are not well formed
      */
     public RequestCtx(Set<Subject> subjects, Set<Attribute> resource, Set<Attribute> action,
                       Set<Attribute> environment) throws IllegalArgumentException {
@@ -142,13 +145,17 @@ public class RequestCtx extends AbstractRequestCtx {
     }
 
     /**
-     * Constructor that creates a <code>RequestCtx</code> from components.
+     *  Constructor that creates a <code>RequestCtx</code> from components.
      *
-     * @param attributesSet
+     * @param attributesSet The Attributes for the RequestCtx
      * @param documentRoot the root node of the DOM tree for this request
      * @param resourceContent a text-encoded version of the content, suitable for including in the
      *            RequestType, including the root <code>RequestContent</code> node
-     *
+     * @param subjects The subjects in the request
+     * @param resource The resource for the request
+     * @param action The action to be taken for the request
+     * @param environment The environment specified to the pdp within the request
+     * @param resourceContent A String representing the resource content
      * @throws IllegalArgumentException if the inputs are not well formed
      */
     public RequestCtx(Set<Attributes> attributesSet, Node documentRoot, Set<Subject> subjects,

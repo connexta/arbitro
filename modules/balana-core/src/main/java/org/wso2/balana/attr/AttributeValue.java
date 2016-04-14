@@ -35,24 +35,18 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.Indenter;
+import java.net.URI;
+import java.util.Collections;
+import java.util.List;
 
 import org.wso2.balana.cond.Evaluatable;
 import org.wso2.balana.cond.EvaluationResult;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
-import java.net.URI;
-
-import java.util.Collections;
-import java.util.List;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * The base type for all datatypes used in a policy or request/response, this abstract class
  * represents a value for a given attribute type. All the required types defined in the XACML
- * specification are provided as instances of <code>AttributeValue<code>s. If you want to
+ * specification are provided as instances of <code>AttributeValue</code>s. If you want to
  * provide a new type, extend this class and implement the
  * <code>equals(Object)</code> and <code>hashCode</code> methods from <code>Object</code>, which are
  * used for equality checking.

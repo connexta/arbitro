@@ -36,20 +36,20 @@
 
 package org.wso2.balana.xacml2;
 
-import org.wso2.balana.*;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.Status;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.MatchResult;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.TargetMatch;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
 
 
 /**
@@ -207,7 +207,7 @@ public class TargetSection
 
     /**
      * Encodes this <code>TargetSection</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -35,14 +35,13 @@
 
 package org.wso2.balana.combine;
 
-import org.wso2.balana.UnknownIdentifierException;
-
 import java.net.URI;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
+
+import org.wso2.balana.UnknownIdentifierException;
 
 /**
  * This is a basic implementation of <code>CombiningAlgFactory</code>. It implements the insertion
@@ -72,10 +71,10 @@ public class BaseCombiningAlgFactory extends CombiningAlgFactory {
     /**
      * Constructor that configures this factory with an initial set of supported algorithms.
      * 
-     * @param algorithms a <code>Set</code> of </code>CombiningAlgorithm</code>s
+     * @param algorithms a <code>Set</code> of <code>CombiningAlgorithm</code>s
      * 
      * @throws IllegalArgumentException if any elements of the set are not
-     *             </code>CombiningAlgorithm</code>s
+     *             <code>CombiningAlgorithm</code>s
      */
     public BaseCombiningAlgFactory(Set algorithms) {
         algMap = new HashMap();

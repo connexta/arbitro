@@ -35,18 +35,7 @@
 
 package org.wso2.balana;
 
-import org.wso2.balana.combine.CombinerElement;
-import org.wso2.balana.combine.CombinerParameter;
-import org.wso2.balana.combine.PolicyCombinerElement;
-import org.wso2.balana.combine.PolicyCombiningAlgorithm;
-
-import org.wso2.balana.finder.PolicyFinder;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -55,6 +44,11 @@ import java.util.Set;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.combine.CombinerElement;
+import org.wso2.balana.combine.CombinerParameter;
+import org.wso2.balana.combine.PolicyCombinerElement;
+import org.wso2.balana.combine.PolicyCombiningAlgorithm;
+import org.wso2.balana.finder.PolicyFinder;
 
 /**
  * Represents one of the two top-level constructs in XACML, the PolicySetType. This can contain
@@ -387,7 +381,7 @@ public class PolicySet extends AbstractPolicy {
 
     /**
      * Encodes this <code>PolicySet</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

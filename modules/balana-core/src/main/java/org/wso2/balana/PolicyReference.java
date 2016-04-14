@@ -35,30 +35,23 @@
 
 package org.wso2.balana;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.combine.CombiningAlgorithm;
-
-import org.wso2.balana.ctx.AbstractResult;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.ResultFactory;
-import org.wso2.balana.ctx.xacml2.Result;
-import org.wso2.balana.ctx.Status;
-
-import org.wso2.balana.finder.PolicyFinder;
-import org.wso2.balana.finder.PolicyFinderResult;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.wso2.balana.combine.CombiningAlgorithm;
+import org.wso2.balana.ctx.AbstractResult;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.ResultFactory;
+import org.wso2.balana.ctx.Status;
+import org.wso2.balana.ctx.xacml2.Result;
+import org.wso2.balana.finder.PolicyFinder;
+import org.wso2.balana.finder.PolicyFinderResult;
 
 /**
  * This class is used as a placeholder for the PolicyIdReference and PolicySetIdReference fields in
@@ -471,7 +464,7 @@ public class PolicyReference extends AbstractPolicy {
 
     /**
      * Encodes this <code>PolicyReference</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

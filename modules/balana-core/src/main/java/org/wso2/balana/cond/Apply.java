@@ -35,13 +35,7 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.*;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -49,6 +43,9 @@ import java.util.List;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.XACMLConstants;
 import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
@@ -142,6 +139,8 @@ public class Apply implements Evaluatable {
      *            parsing
      * 
      * @throws ParsingException if this is not a valid ConditionType
+     *
+     * @return an instance of Apply based on the given DOM root node
      */
     public static Apply getConditionInstance(Node root, String xpathVersion, VariableManager manager)
             throws ParsingException {
@@ -166,6 +165,7 @@ public class Apply implements Evaluatable {
      *            this is unspecified (ie, not supplied in the defaults section of the policy)
      * 
      * @throws ParsingException if this is not a valid ConditionType
+     * @return an instance of Apply based on the given DOM root node
      */
     public static Apply getConditionInstance(Node root, String xpathVersion)
             throws ParsingException {
@@ -182,6 +182,7 @@ public class Apply implements Evaluatable {
      *            parsing
      * 
      * @throws ParsingException if this is not a valid ApplyType
+     * @return an instance of Apply based on the given DOM root node
      */
     public static Apply getInstance(Node root, PolicyMetaData metaData, VariableManager manager)
             throws ParsingException {
@@ -199,6 +200,7 @@ public class Apply implements Evaluatable {
      * @param root the DOM root of an ApplyType XML type
      * @param xpathVersion the XPath version to use in any selectors or XPath functions, or null if
      *            this is unspecified (ie, not supplied in the defaults section of the policy)
+     * @return an instance of Apply based on the given DOM root node
      * 
      * @throws ParsingException if this is not a valid ApplyType
      */
@@ -324,7 +326,7 @@ public class Apply implements Evaluatable {
 
     /**
      * Encodes this <code>Apply</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

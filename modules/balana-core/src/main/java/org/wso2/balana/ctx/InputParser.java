@@ -35,20 +35,18 @@
 
 package org.wso2.balana.ctx;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.ParsingException;
-
 import java.io.File;
 import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
+import org.wso2.balana.ParsingException;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -104,7 +102,7 @@ public class InputParser implements ErrorHandler {
      * Tries to Parse the given output as a Context document.
      * 
      * @param input the stream to parse
-     * @param rootTage either "Request" or "Response"
+     * @param rootTag either "Request" or "Response"
      * 
      * @return the root node of the request/response
      * 

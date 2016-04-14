@@ -35,19 +35,19 @@
 
 package org.wso2.balana.xacml2;
 
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.MatchResult;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.TargetMatch;
 import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
@@ -144,7 +144,7 @@ public class TargetMatchGroup {
 
     /**
      * Encodes this <code>TargetMatchGroup</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

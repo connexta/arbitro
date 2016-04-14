@@ -18,21 +18,20 @@
 
 package org.wso2.balana.xacml3;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
-import org.wso2.balana.ctx.AbstractResult;
-import org.wso2.balana.ctx.AttributeAssignment;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.xacml2.Result;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.ctx.AbstractResult;
+import org.wso2.balana.ctx.AttributeAssignment;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * Represents the AdviceExpressionType XML type in XACML. Advice are introduced with XACML 3   
@@ -163,7 +162,7 @@ public class AdviceExpression {
 
     /**
      * Encodes this <code>ObligationExpression</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

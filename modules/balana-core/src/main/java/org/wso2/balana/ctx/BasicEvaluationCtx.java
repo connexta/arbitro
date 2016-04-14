@@ -19,6 +19,9 @@
 
 package org.wso2.balana.ctx;
 
+import java.net.URI;
+import java.util.Date;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Node;
@@ -28,9 +31,6 @@ import org.wso2.balana.attr.DateAttribute;
 import org.wso2.balana.attr.DateTimeAttribute;
 import org.wso2.balana.attr.TimeAttribute;
 import org.wso2.balana.cond.EvaluationResult;
-
-import java.net.URI;
-import java.util.Date;
 
 /**
  * Implementation of <code>EvaluationCtx</code>.  This implements some generic methods that
@@ -82,7 +82,7 @@ public abstract class BasicEvaluationCtx implements EvaluationCtx {
 
     /**
      * TODO
-     * @return
+     * @return a boolean which indicates if a search is being performed
      */
     public boolean isSearching() {
         return false;
@@ -94,12 +94,12 @@ public abstract class BasicEvaluationCtx implements EvaluationCtx {
      * are consistent, so that they all represent the same moment. If this is the first time that
      * one of these three values has been requested, and caching is enabled, then the three values
      * will be resolved and stored.
-     * <p/>
+     * <p>
      * Note that the value supplied here applies only to dynamically resolved values, not those
      * supplied in the Request. In other words, this always returns a dynamically resolved value
      * local to the PDP, even if a different value was supplied in the Request. This is handled
      * correctly when the value is requested by its identifier.
-     *
+     *</p>
      * @return the current time
      */
     public synchronized TimeAttribute getCurrentTime() {
@@ -116,12 +116,12 @@ public abstract class BasicEvaluationCtx implements EvaluationCtx {
      * are consistent, so that they all represent the same moment. If this is the first time that
      * one of these three values has been requested, and caching is enabled, then the three values
      * will be resolved and stored.
-     * <p/>
+     * <p>
      * Note that the value supplied here applies only to dynamically resolved values, not those
      * supplied in the Request. In other words, this always returns a dynamically resolved value
      * local to the PDP, even if a different value was supplied in the Request. This is handled
      * correctly when the value is requested by its identifier.
-     *
+     * </p>
      * @return the current date
      */
     public synchronized DateAttribute getCurrentDate() {
@@ -138,12 +138,12 @@ public abstract class BasicEvaluationCtx implements EvaluationCtx {
      * dateTime are consistent, so that they all represent the same moment. If this is the first
      * time that one of these three values has been requested, and caching is enabled, then the
      * three values will be resolved and stored.
-     * <p/>
+     * <p>
      * Note that the value supplied here applies only to dynamically resolved values, not those
      * supplied in the Request. In other words, this always returns a dynamically resolved value
      * local to the PDP, even if a different value was supplied in the Request. This is handled
      * correctly when the value is requested by its identifier.
-     *
+     * </p>
      * @return the current dateTime
      */
     public synchronized DateTimeAttribute getCurrentDateTime() {

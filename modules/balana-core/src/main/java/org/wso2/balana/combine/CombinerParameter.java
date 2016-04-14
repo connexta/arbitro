@@ -35,18 +35,12 @@
 
 package org.wso2.balana.combine;
 
+import org.w3c.dom.Node;
 import org.wso2.balana.Balana;
-import org.wso2.balana.Indenter;
 import org.wso2.balana.ParsingException;
 import org.wso2.balana.UnknownIdentifierException;
-
 import org.wso2.balana.attr.AttributeFactory;
 import org.wso2.balana.attr.AttributeValue;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
-import org.w3c.dom.Node;
 
 /**
  * Represents a single named parameter to a combining algorithm. Parameters are only used by XACML
@@ -120,7 +114,7 @@ public class CombinerParameter {
 
     /**
      * Encodes this <code>CombinerParameter</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

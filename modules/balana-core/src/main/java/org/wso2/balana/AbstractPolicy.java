@@ -35,32 +35,29 @@
 
 package org.wso2.balana;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.combine.*;
-import org.wso2.balana.ctx.AbstractResult;
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.xacml2.Result;
-import org.wso2.balana.xacml2.Obligation;
-import org.wso2.balana.xacml3.Advice;
-import org.wso2.balana.xacml3.AdviceExpression;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.wso2.balana.xacml3.ObligationExpression;
+import org.wso2.balana.combine.CombinerElement;
+import org.wso2.balana.combine.CombinerParameter;
+import org.wso2.balana.combine.CombiningAlgFactory;
+import org.wso2.balana.combine.CombiningAlgorithm;
+import org.wso2.balana.combine.PolicyCombiningAlgorithm;
+import org.wso2.balana.combine.RuleCombiningAlgorithm;
+import org.wso2.balana.ctx.AbstractResult;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.xacml2.Result;
+import org.wso2.balana.xacml3.Advice;
+import org.wso2.balana.xacml3.AdviceExpression;
 
 /**
  * Represents an instance of an XACML policy.
@@ -504,6 +501,8 @@ public abstract class AbstractPolicy  implements PolicyTreeElement{
 
     /**
      * Returns the meta-data associated with this policy
+     *
+     * @return the policy's metadata
      */
     public PolicyMetaData getMetaData() {
         return metaData;
@@ -618,7 +617,7 @@ public abstract class AbstractPolicy  implements PolicyTreeElement{
 
     /**
      * Encodes this <code>Obligation</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */
