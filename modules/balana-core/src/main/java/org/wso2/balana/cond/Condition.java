@@ -35,22 +35,17 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.*;
-
-import org.wso2.balana.attr.BooleanAttribute;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.attr.BooleanAttribute;
 import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
@@ -162,6 +157,7 @@ public class Condition implements Evaluatable {
      *            parsing
      * 
      * @throws ParsingException if this is not a valid ConditionType
+     * @return Returns an instance of <code>Condition</code> based on the given DOM root.
      */
     public static Condition getInstance(Node root, PolicyMetaData metaData, VariableManager manager)
             throws ParsingException {
@@ -267,7 +263,7 @@ public class Condition implements Evaluatable {
 
     /**
      * Encodes this <code>Condition</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

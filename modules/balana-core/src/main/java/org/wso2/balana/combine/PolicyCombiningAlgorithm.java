@@ -35,13 +35,11 @@
 
 package org.wso2.balana.combine;
 
-import org.wso2.balana.ctx.EvaluationCtx;
+import java.net.URI;
+import java.util.List;
 
 import org.wso2.balana.ctx.AbstractResult;
-
-import java.net.URI;
-
-import java.util.List;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * The base type for all Policy combining algorithms. Unlike in Rule Combining Algorithms, each
@@ -76,8 +74,8 @@ public abstract class PolicyCombiningAlgorithm extends CombiningAlgorithm {
      * 
      * @param context the representation of the request
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s
-     * @param policyElements a <code>List</code> of <code>CombinerElement<code>s
+     *            <code>CombinerParameter</code>s
+     * @param policyElements a <code>List</code> of <code>CombinerElement</code>s
      * 
      * @return a single unified result based on the combining logic
      */

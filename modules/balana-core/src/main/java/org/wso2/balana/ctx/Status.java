@@ -35,13 +35,6 @@
 
 package org.wso2.balana.ctx;
 
-import org.wso2.balana.DOMHelper;
-import org.wso2.balana.Indenter;
-import org.wso2.balana.ParsingException;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -50,6 +43,8 @@ import java.util.List;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
 
 /**
  * Represents the status data that is included in a ResultType. By default, the status is OK.
@@ -262,7 +257,7 @@ public class Status {
 
     /**
      * Encodes this <code>Status</code> into its XML form and writes this out to the provided                        
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

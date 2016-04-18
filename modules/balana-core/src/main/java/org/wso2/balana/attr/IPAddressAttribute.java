@@ -35,13 +35,12 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ParsingException;
-
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.net.URI;
+import java.net.UnknownHostException;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
 
 /**
  * Represents the IPAddress datatype introduced in XACML 2.0. All objects of this class are
@@ -106,7 +105,7 @@ public abstract class IPAddressAttribute extends AttributeValue {
      * 
      * @param address a non-null <code>InetAddress</code>
      * @param mask an <code>InetAddress</code> or null if there is no mask
-     * @param portRange a non-null <code>PortRange</code>
+     * @param range a non-null <code>PortRange</code>
      */
     protected IPAddressAttribute(InetAddress address, InetAddress mask, PortRange range) {
         super(identifierURI);

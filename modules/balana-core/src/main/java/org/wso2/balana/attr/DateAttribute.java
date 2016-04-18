@@ -36,12 +36,10 @@
 package org.wso2.balana.attr;
 
 import java.net.URI;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -278,6 +276,7 @@ public class DateAttribute extends AttributeValue {
      * node.
      * 
      * @param root the <code>Node</code> that contains the desired value
+     * @throws ParseException if the node value does not evalute to a DateAttribute
      * @return a new <code>DateAttribute</code> representing the appropriate value (null if there is
      *         a parsing error)
      */
@@ -290,6 +289,7 @@ public class DateAttribute extends AttributeValue {
      * string provided.
      * 
      * @param value a string representing the desired value
+     * @throws ParseException if the node value does not evalute to a DateAttribute
      * @return a new <code>DateAttribute</code> representing the desired value (null if there is a
      *         parsing error)
      */

@@ -35,19 +35,19 @@
 
 package org.wso2.balana.finder;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.*;
-import org.wso2.balana.ctx.EvaluationCtx;
-
-import org.wso2.balana.ctx.Status;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.PolicyReference;
+import org.wso2.balana.VersionConstraints;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
 
 /**
  * This class is used by the PDP to find all policies used in evaluation. A PDP is given a
@@ -57,7 +57,7 @@ import java.util.Set;
  * <p>
  * While this class is typically used by the PDP, it is intentionally designed to support
  * stand-alone use, so it could be the base for a distributed service, or for some application that
- * needs just this functionality. There is nothing in the <code>PolicyFinder</code that relies on
+ * needs just this functionality. There is nothing in the <code>PolicyFinder</code> that relies on
  * the functionality in the PDP. An example of this is a PDP that offloads all policy work by
  * passing requests to another server that does all the retrieval, and passes back the applicable
  * policy. This would require custom code undefined in the XACML spec, but it would free up the

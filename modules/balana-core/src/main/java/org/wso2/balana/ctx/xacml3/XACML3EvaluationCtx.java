@@ -18,27 +18,49 @@
 
 package org.wso2.balana.ctx.xacml3;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
-import org.wso2.balana.attr.*;
-import org.wso2.balana.attr.xacml3.XPathAttribute;
-import org.wso2.balana.cond.EvaluationResult;
-import org.wso2.balana.ctx.*;
-import org.wso2.balana.finder.ResourceFinderResult;
-import org.wso2.balana.xacml3.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.*;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.wso2.balana.Balana;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.DefaultNamespaceContext;
+import org.wso2.balana.PDPConfig;
+import org.wso2.balana.PolicyReference;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.BagAttribute;
+import org.wso2.balana.attr.StringAttribute;
+import org.wso2.balana.attr.xacml3.XPathAttribute;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.ctx.AbstractRequestCtx;
+import org.wso2.balana.ctx.Attribute;
+import org.wso2.balana.ctx.BasicEvaluationCtx;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
+import org.wso2.balana.finder.ResourceFinderResult;
+import org.wso2.balana.xacml3.Attributes;
+import org.wso2.balana.xacml3.AttributesReference;
+import org.wso2.balana.xacml3.MultiRequests;
+import org.wso2.balana.xacml3.MultipleCtxResult;
+import org.wso2.balana.xacml3.RequestReference;
 
 /**
  * This is implementation of XACML3 evaluation context
@@ -207,9 +229,9 @@ public class XACML3EvaluationCtx extends BasicEvaluationCtx {
      * for each. The Form is a Map that is indexed by the String form of the category ids, and that
      * contains Sets at each entry with all attributes that have that id
      *
-     * @param attributeSet 
-     * @param mapAttributes
-     * @return
+     * @param attributeSet  The attributes used to build a lookup map for attributes
+     * @param mapAttributes The map which will have the attributes put into it
+     *
      */
     private void setupAttributes(Set<Attributes> attributeSet, Map<String,
                                             List<Attributes>> mapAttributes)  {
@@ -701,7 +723,7 @@ public class XACML3EvaluationCtx extends BasicEvaluationCtx {
 
     /**
      *
-     * @return
+     * @return returns a Set of <code>PolicyReference</code>s
      */
     public Set<PolicyReference> getPolicyReferences() {
         return policyReferences;
@@ -709,16 +731,16 @@ public class XACML3EvaluationCtx extends BasicEvaluationCtx {
 
     /**
      *
-     * @param policyReferences
+     * @param policyReferences The Set of PolicyRefences to be used for the setter method
      */
     public void setPolicyReferences(Set<PolicyReference> policyReferences) {
         this.policyReferences = policyReferences;
     }
 
     /**
-     * 
-     * @param category
-     * @return
+     *
+     * @param category The category of attributes to retrieve
+     * @return A List of attributes for the provided category
      */
     public List<Attributes> getAttributes(String category){
         return mapAttributes.get(category);

@@ -35,64 +35,54 @@
 
 package org.wso2.balana;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.attr.AttributeFactory;
-import org.wso2.balana.attr.AttributeFactoryProxy;
-import org.wso2.balana.attr.AttributeProxy;
-import org.wso2.balana.attr.BaseAttributeFactory;
-import org.wso2.balana.attr.StandardAttributeFactory;
-
-import org.wso2.balana.combine.BaseCombiningAlgFactory;
-import org.wso2.balana.combine.CombiningAlgFactory;
-import org.wso2.balana.combine.CombiningAlgFactoryProxy;
-import org.wso2.balana.combine.CombiningAlgorithm;
-import org.wso2.balana.combine.StandardCombiningAlgFactory;
-
-import org.wso2.balana.cond.BaseFunctionFactory;
-import org.wso2.balana.cond.BasicFunctionFactoryProxy;
-import org.wso2.balana.cond.Function;
-import org.wso2.balana.cond.FunctionProxy;
-import org.wso2.balana.cond.FunctionFactory;
-import org.wso2.balana.cond.FunctionFactoryProxy;
-import org.wso2.balana.cond.StandardFunctionFactory;
-
-import org.wso2.balana.cond.cluster.FunctionCluster;
-
-import org.wso2.balana.finder.AttributeFinder;
-import org.wso2.balana.finder.PolicyFinder;
-import org.wso2.balana.finder.ResourceFinder;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.xml.sax.SAXException;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.attr.AttributeFactory;
+import org.wso2.balana.attr.AttributeFactoryProxy;
+import org.wso2.balana.attr.AttributeProxy;
+import org.wso2.balana.attr.BaseAttributeFactory;
+import org.wso2.balana.attr.StandardAttributeFactory;
+import org.wso2.balana.combine.BaseCombiningAlgFactory;
+import org.wso2.balana.combine.CombiningAlgFactory;
+import org.wso2.balana.combine.CombiningAlgFactoryProxy;
+import org.wso2.balana.combine.CombiningAlgorithm;
+import org.wso2.balana.combine.StandardCombiningAlgFactory;
+import org.wso2.balana.cond.BaseFunctionFactory;
+import org.wso2.balana.cond.BasicFunctionFactoryProxy;
+import org.wso2.balana.cond.Function;
+import org.wso2.balana.cond.FunctionFactory;
+import org.wso2.balana.cond.FunctionFactoryProxy;
+import org.wso2.balana.cond.FunctionProxy;
+import org.wso2.balana.cond.StandardFunctionFactory;
+import org.wso2.balana.cond.cluster.FunctionCluster;
+import org.wso2.balana.finder.AttributeFinder;
+import org.wso2.balana.finder.PolicyFinder;
+import org.wso2.balana.finder.ResourceFinder;
+import org.xml.sax.SAXException;
 
 /**
  * This class supports run-time loading of configuration data. It loads the configurations from an
@@ -173,7 +163,9 @@ public class ConfigurationStore {
      * security model doesn't allow the use of properties, if you don't want to use a property to
      * specify a configuration file, or if you want to use more then one configuration file. If the
      * file can't be accessed, or if the file is invalid, then an exception is thrown.
-     * 
+     *
+     * @param configFile The file
+     *
      * @throws ParsingException if anything goes wrong during the parsing of the configuration file,
      *             the class loading, or the factory and pdp setup
      */
@@ -190,6 +182,8 @@ public class ConfigurationStore {
     /**
      * Private helper function used by both constructors to actually load the configuration data.
      * This is the root of several private methods used to setup all the pdps and factories.
+     *
+     * @param configFile The configuration {@link File} to be loaded
      */
     private void setupConfig(File configFile) throws ParsingException {
         logger.info("Loading runtime configuration");
@@ -730,8 +724,10 @@ public class ConfigurationStore {
     /**
      * Returns the PDP configuration with the given name. If no such configuration exists then an
      * exception is thrown.
-     * 
-     * @return the matching PDP configuation
+     *
+     * @param name The name of the desired {@link PDPConfig}
+     *
+     * @return the matching {@link PDPConfig}
      * 
      * @throws UnknownIdentifierException if the name is unknown
      */
@@ -765,7 +761,9 @@ public class ConfigurationStore {
     /**
      * Returns the attribute factory with the given name. If no such factory exists then an
      * exception is thrown.
-     * 
+     *
+     * @param name The name of the desired {@link AttributeFactory}
+     *
      * @return the matching attribute factory
      * 
      * @throws UnknownIdentifierException if the name is unknown
@@ -824,7 +822,9 @@ public class ConfigurationStore {
     /**
      * Returns the combiningAlg factory with the given name. If no such factory exists then an
      * exception is thrown.
-     * 
+     *
+     * @param name The name of the {@link CombiningAlgFactory}
+     *
      * @return the matching combiningAlg factory
      * 
      * @throws UnknownIdentifierException if the name is unknown
@@ -883,7 +883,9 @@ public class ConfigurationStore {
     /**
      * Returns the function factory proxy with the given name. If no such proxy exists then an
      * exception is thrown.
-     * 
+     *
+     * @param name the name of the {@link FunctionFactoryProxy}
+     *
      * @return the matching function factory proxy
      * 
      * @throws UnknownIdentifierException if the name is unknown

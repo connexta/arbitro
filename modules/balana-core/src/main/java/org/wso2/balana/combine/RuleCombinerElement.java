@@ -35,14 +35,10 @@
 
 package org.wso2.balana.combine;
 
-import org.wso2.balana.Indenter;
-import org.wso2.balana.Rule;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.util.Iterator;
 import java.util.List;
+
+import org.wso2.balana.Rule;
 
 /**
  * Specific version of <code>CombinerElement</code> used for rule combining.
@@ -53,7 +49,7 @@ import java.util.List;
 public class RuleCombinerElement extends CombinerElement {
 
     /**
-     * Constructor that only takes a <code>Rule</code. No parameters are associated with this
+     * Constructor that only takes a <code>Rule</code>. No parameters are associated with this
      * <code>Rule</code> when combining.
      * 
      * @param rule a <code>Rule</code> to use in combining
@@ -68,7 +64,7 @@ public class RuleCombinerElement extends CombinerElement {
      * 
      * @param rule a <code>Rule</code> to use in combining
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s provided for general
+     *            <code>CombinerParameter</code>s provided for general
      *                   use (for all pre-2.0 policies this must be empty)
      */
     public RuleCombinerElement(Rule rule, List parameters) {
@@ -86,7 +82,7 @@ public class RuleCombinerElement extends CombinerElement {
 
     /**
      * Encodes this <code>RuleCombinerElement</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

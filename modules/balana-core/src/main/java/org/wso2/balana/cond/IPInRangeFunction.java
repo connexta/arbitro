@@ -18,13 +18,13 @@
 
 package org.wso2.balana.cond;
 
+import java.net.InetAddress;
+import java.util.List;
+
 import org.wso2.balana.attr.AttributeValue;
 import org.wso2.balana.attr.BooleanAttribute;
 import org.wso2.balana.attr.IPAddressAttribute;
 import org.wso2.balana.ctx.EvaluationCtx;
-
-import java.net.InetAddress;
-import java.util.List;
 
 /**
  * IP range function developed for Balana.
@@ -83,8 +83,8 @@ public class IPInRangeFunction extends FunctionBase {
 
     /**
      * Helper method
-     * @param ip
-     * @return
+     * @param ip InetAddress to convert to long
+     * @return the long representation of an InetAddress
      */
     public static long ipToLong(InetAddress ip) {
         byte[] octets = ip.getAddress();

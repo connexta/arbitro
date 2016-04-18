@@ -15,20 +15,21 @@
  */
 package org.wso2.balana.xacml3;
 
+import java.net.URI;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.wso2.balana.*;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.XACMLConstants;
 import org.wso2.balana.ctx.Attribute;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.net.URI;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Represents the AttributesType XML type found in the context schema.
@@ -85,9 +86,9 @@ public class Attributes {
 
     /**
      *
-     * @param root
-     * @return
-     * @throws ParsingException
+     * @param root the Node to parse the attributes from
+     * @return The resulting Attributes form the parsed Node
+     * @throws ParsingException if there is a failure during parsing the node
      */
     public static Attributes getInstance(Node root) throws ParsingException {
         URI category ;
@@ -202,7 +203,7 @@ public class Attributes {
 
     /**
      * Encodes this <code>Attributes</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

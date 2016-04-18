@@ -35,20 +35,43 @@
 
 package org.wso2.balana.cond;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.UnknownIdentifierException;
-
-import org.wso2.balana.cond.cluster.*;
-import org.wso2.balana.cond.cluster.xacml3.*;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
-import java.util.HashSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.wso2.balana.cond.cluster.AbsFunctionCluster;
+import org.wso2.balana.cond.cluster.AddFunctionCluster;
+import org.wso2.balana.cond.cluster.ComparisonFunctionCluster;
+import org.wso2.balana.cond.cluster.ConditionBagFunctionCluster;
+import org.wso2.balana.cond.cluster.ConditionSetFunctionCluster;
+import org.wso2.balana.cond.cluster.DateMathFunctionCluster;
+import org.wso2.balana.cond.cluster.DivideFunctionCluster;
+import org.wso2.balana.cond.cluster.EqualFunctionCluster;
+import org.wso2.balana.cond.cluster.FloorFunctionCluster;
+import org.wso2.balana.cond.cluster.GeneralBagFunctionCluster;
+import org.wso2.balana.cond.cluster.GeneralSetFunctionCluster;
+import org.wso2.balana.cond.cluster.HigherOrderFunctionCluster;
+import org.wso2.balana.cond.cluster.LogicalFunctionCluster;
+import org.wso2.balana.cond.cluster.MatchFunctionCluster;
+import org.wso2.balana.cond.cluster.ModFunctionCluster;
+import org.wso2.balana.cond.cluster.MultiplyFunctionCluster;
+import org.wso2.balana.cond.cluster.NOfFunctionCluster;
+import org.wso2.balana.cond.cluster.NotFunctionCluster;
+import org.wso2.balana.cond.cluster.NumericConvertFunctionCluster;
+import org.wso2.balana.cond.cluster.RoundFunctionCluster;
+import org.wso2.balana.cond.cluster.StringFunctionCluster;
+import org.wso2.balana.cond.cluster.StringNormalizeFunctionCluster;
+import org.wso2.balana.cond.cluster.SubtractFunctionCluster;
+import org.wso2.balana.cond.cluster.xacml3.StringComparingFunctionCluster;
+import org.wso2.balana.cond.cluster.xacml3.StringConversionFunctionCluster;
+import org.wso2.balana.cond.cluster.xacml3.StringCreationFunctionCluster;
+import org.wso2.balana.cond.cluster.xacml3.SubStringFunctionCluster;
+import org.wso2.balana.cond.cluster.xacml3.XPathFunctionCluster;
 
 /**
  * This factory supports the standard set of functions specified in XACML 1.x and 2.0. It is the
@@ -298,8 +321,6 @@ public class StandardFunctionFactory extends BaseFunctionFactory {
      *            <code>PolicyMetaData</code>
      * 
      * @return a <code>Set</code> of identifiers
-     * 
-     * @throws UnknownIdentifierException if the version string is unknown
      */
     public static Set getStandardFunctions(String xacmlVersion) {
         // FIXME: collecting the identifiers needs to be implemented..
@@ -309,7 +330,7 @@ public class StandardFunctionFactory extends BaseFunctionFactory {
     /**
      * Returns the set of abstract functions that this standard factory supports as a mapping of
      * identifier to proxy.
-     * 
+     * @param xacmlVersion a standard XACML identifier string, as provided in <code>PolicyMetaData</code>
      * @return a <code>Map</code> mapping <code>URI</code>s to <code>FunctionProxy</code>s
      */
     public static Map getStandardAbstractFunctions(String xacmlVersion) {

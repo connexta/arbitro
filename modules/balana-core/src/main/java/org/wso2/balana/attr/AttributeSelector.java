@@ -35,27 +35,21 @@
 
 package org.wso2.balana.attr;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.*;
-
-import org.wso2.balana.cond.Evaluatable;
-import org.wso2.balana.cond.EvaluationResult;
-
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.ctx.Status;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
 
 /**
  * Supports the standard selector functionality in XACML 1.0 /2.0 version, which uses XPath expressions to resolve
@@ -305,7 +299,7 @@ public class AttributeSelector extends AbstractAttributeSelector {
 
     /**
      * Encodes this <code>AttributeSelector</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -45,9 +45,8 @@ import java.util.*;
  * empty. The bag is immutable, although its contents may not be.
  * <p>
  * NOTE: This is the one standard attribute type that can't be created from the factory, since you
- * can't have this in an XML block (it is used only in return values & dynamic inputs). I think this
- * is right, but we may need to add some functionality to let this go into the factory.
- * 
+ * can't have this in an xml block.
+ *</p>
  * @since 1.0
  * @author Seth Proctor
  * @author Steve Hanna
@@ -165,7 +164,9 @@ public class BagAttribute extends AttributeValue {
     }
 
     /**
-     * Returns an iterator over te
+     * Returns an iterator over the bag
+     *
+     * @return returns an iterator over the bag
      */
     public Iterator iterator() {
         return new ImmutableIterator(bag.iterator());

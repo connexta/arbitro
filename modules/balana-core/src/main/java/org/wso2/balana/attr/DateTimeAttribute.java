@@ -35,21 +35,18 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ParsingException;
-
 import java.net.URI;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
 
 /**
  * Representation of an xs:dateTime value. This class supports parsing xs:dateTime values. All
@@ -241,7 +238,9 @@ public class DateTimeAttribute extends AttributeValue {
 	 * 
 	 * @param root the <code>Node</code> that contains the desired value
 	 * @return a new <code>DateTimeAttribute</code> representing the appropriate value
-	 * @throws ParsingException if any problems occurred while parsing
+	 * @throws ParsingException if any problems occurred while parsing the node value
+	 * @throws ParseException if any problems occurred while parsing the node value
+	 * @throws NumberFormatException if the nanosecond format is incorrect
 	 */
 	public static DateTimeAttribute getInstance(Node root) throws ParsingException,
 			NumberFormatException, ParseException {
@@ -256,7 +255,7 @@ public class DateTimeAttribute extends AttributeValue {
 	 * @return a new <code>DateTimeAttribute</code> representing the desired value
 	 * @throws ParsingException if the text is formatted incorrectly
 	 * @throws NumberFormatException if the nanosecond format is incorrect
-	 * @throws ParseException
+	 * @throws ParseException if any problems occurred while parsing the node value
 	 */
 	public static DateTimeAttribute getInstance(String value) throws ParsingException,
 			NumberFormatException, ParseException {
@@ -598,7 +597,7 @@ public class DateTimeAttribute extends AttributeValue {
 	/**
 	 * Gets the offset in minutes between the default time zone and UTC for the specified date.
 	 * 
-	 * @param the <code>Date</code> whose offset is desired
+	 * @param date the <code>Date</code> whose offset is desired
 	 * @return the offset in minutes
 	 */
 	static int getDefaultTZOffset(Date date) {
@@ -614,7 +613,7 @@ public class DateTimeAttribute extends AttributeValue {
 	 * <b>WARNING</b>: This function changes the value stored in the date parameter!
 	 * 
 	 * @param date the <code>Date</code> to be combined (<b>value may be modified!</b>)
-	 * @param nanos the nanoseconds to be combined
+	 * @param nanoseconds the nanoseconds to be combined
 	 * @return the resulting number of nanoseconds
 	 */
 	static int combineNanos(Date date, int nanoseconds) {

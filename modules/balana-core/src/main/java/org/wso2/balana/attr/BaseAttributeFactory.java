@@ -35,11 +35,7 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ParsingException;
-import org.wso2.balana.UnknownIdentifierException;
-
 import java.net.URI;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -47,6 +43,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.UnknownIdentifierException;
 
 /**
  * This is a basic implementation of <code>AttributeFactory</code>. It implements the insertion and
@@ -76,10 +74,10 @@ public class BaseAttributeFactory extends AttributeFactory {
     /**
      * Constructor that configures this factory with an initial set of supported datatypes.
      * 
-     * @param attributes a <code>Map</code> of <code>String</code>s to </code>AttributeProxy</code>s
+     * @param attributes a <code>Map</code> of <code>String</code>s to <code>AttributeProxy</code>s
      * 
      * @throws IllegalArgumentException if any elements of the Map are not
-     *             </code>AttributeProxy</code>s
+     *             <code>AttributeProxy</code>s
      */
     public BaseAttributeFactory(Map attributes) {
         attributeMap = new HashMap();

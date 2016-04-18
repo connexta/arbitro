@@ -20,8 +20,6 @@ package org.wso2.balana;
 
 import org.w3c.dom.Node;
 
-import java.util.HashMap;
-
 /**
  * Factory that creates the AbstractTarget
  */
@@ -35,7 +33,7 @@ public class TargetFactory {
      * @param node  DOM node
      * @param metaData policy meta data
      * @return  <code>AbstractTarget</code>
-     * @throws ParsingException
+     * @throws ParsingException if the DOM node is invalid
      */
     public AbstractTarget getTarget(Node node, PolicyMetaData metaData) throws ParsingException {
 

@@ -97,6 +97,8 @@ public class AnyURIAttribute extends AttributeValue {
      * node.
      * 
      * @param root the <code>Node</code> that contains the desired value
+     *
+     * @throws URISyntaxException if the DOM node value cannot be parsed as a URI reference
      * 
      * @return a new <code>AnyURIAttribute</code> representing the appropriate value (null if there
      *         is a parsing error)
@@ -110,6 +112,8 @@ public class AnyURIAttribute extends AttributeValue {
      * the <code>String</code> provided.
      * 
      * @param value a string representing the desired value
+     *
+     * @throws URISyntaxException if the value passed cannot be parsed as a URI reference
      * 
      * @return a new <code>AnyURIAttribute</code> representing the appropriate value
      */

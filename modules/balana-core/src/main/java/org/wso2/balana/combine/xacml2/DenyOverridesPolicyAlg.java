@@ -35,8 +35,15 @@
 
 package org.wso2.balana.combine.xacml2;
 
-import org.wso2.balana.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
+import org.wso2.balana.AbstractPolicy;
+import org.wso2.balana.MatchResult;
+import org.wso2.balana.ObligationResult;
 import org.wso2.balana.combine.PolicyCombinerElement;
 import org.wso2.balana.combine.PolicyCombiningAlgorithm;
 import org.wso2.balana.ctx.AbstractResult;
@@ -44,11 +51,6 @@ import org.wso2.balana.ctx.EvaluationCtx;
 import org.wso2.balana.ctx.ResultFactory;
 import org.wso2.balana.ctx.xacml2.Result;
 import org.wso2.balana.xacml3.Advice;
-
-import java.net.URI;
-import java.net.URISyntaxException;
-
-import java.util.*;
 
 /**
  * This is the standard Deny Overrides policy combining algorithm. It allows a single evaluation of
@@ -105,7 +107,7 @@ public class DenyOverridesPolicyAlg extends PolicyCombiningAlgorithm {
      * 
      * @param context the context from the request
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s
+     *            <code>CombinerParameter</code>s
      * @param policyElements the policies to combine
      * 
      * @return the result of running the combining algorithm

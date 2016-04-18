@@ -35,11 +35,7 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.Indenter;
-
 import java.net.URI;
-
-import java.io.OutputStream;
 
 /**
  * This interface represents the expression type in the XACML 2.0 schema.
@@ -62,6 +58,8 @@ public interface Expression {
      * <code>Evaluatable</code>, which extends this interface, defines <code>evaluatesToBag</code>
      * which is essentially the same function. This method has been deprecated, and
      * <code>returnsBag</code> is now the preferred way to query all <code>Expression</code>s.
+     *
+     * @return boolean value which indicates if this {@link Expression} evaluates to a Bag
      */
     public boolean returnsBag();
 

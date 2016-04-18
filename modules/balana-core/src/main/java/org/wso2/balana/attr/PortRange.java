@@ -217,7 +217,9 @@ public class PortRange {
     }
 
     /**
+     * Encodes the port range into a String
      *
+     * @return String representation of the port value
      */
     public String encode() {
         if (isUnbound())

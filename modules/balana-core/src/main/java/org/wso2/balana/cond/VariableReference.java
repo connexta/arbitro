@@ -35,21 +35,15 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.Indenter;
-import org.wso2.balana.ParsingException;
-import org.wso2.balana.PolicyMetaData;
-import org.wso2.balana.ProcessingException;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
-
 import java.util.Collections;
 import java.util.List;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.PolicyMetaData;
+import org.wso2.balana.ProcessingException;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * This class supports the VariableReferenceType type introuced in XACML 2.0. It allows an
@@ -117,6 +111,8 @@ public class VariableReference implements Expression {
      * @param metaData the meta-data associated with the containing policy
      * @param manager the <code>VariableManager</code> used to connect this reference to its
      *            definition
+     *
+     * @return Returns a new instance of the <code>VariableReference</code> class based on a DOM node.
      * 
      * @throws ParsingException if the VariableReferenceType is invalid
      */
@@ -260,7 +256,7 @@ public class VariableReference implements Expression {
 
     /**
      * Encodes this <code>VariableReference</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

@@ -35,17 +35,14 @@
 
 package org.wso2.balana.attr;
 
-import org.wso2.balana.ParsingException;
-
 import java.math.BigInteger;
-
 import java.net.URI;
-
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-import java.util.regex.Matcher;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
 
 /**
  * Representation of an xf:dayTimeDuration value. This class supports parsing xd:dayTimeDuration
@@ -243,6 +240,8 @@ public class DayTimeDurationAttribute extends AttributeValue {
 	 * a particular DOM node.
 	 * 
 	 * @param root the <code>Node</code> that contains the desired value
+	 * @throws ParsingException if the node value is not valid text for a date
+	 * @throws NumberFormatException if the node value does not contain numbers in the proper numeric format
 	 * @return a new <code>DayTimeDurationAttribute</code> representing the appropriate value (null
 	 *         if there is a parsing error)
 	 */
@@ -278,6 +277,8 @@ public class DayTimeDurationAttribute extends AttributeValue {
 	 * value indicated by the string provided.
 	 * 
 	 * @param value a string representing the desired value
+	 * @throws ParsingException if the node value is not valid text for a date
+	 * @throws NumberFormatException if the node value does not contain numbers in the proper numeric format
 	 * @return a new <code>DayTimeDurationAttribute</code> representing the desired value (null if
 	 *         there is a parsing error)
 	 */

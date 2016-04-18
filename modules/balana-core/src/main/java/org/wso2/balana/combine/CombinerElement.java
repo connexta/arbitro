@@ -35,14 +35,11 @@
 
 package org.wso2.balana.combine;
 
-import org.wso2.balana.Indenter;
-import org.wso2.balana.PolicyTreeElement;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import java.io.OutputStream;
+import org.wso2.balana.PolicyTreeElement;
 
 /**
  * Represents one input (a Rule, Policy, PolicySet, or reference) to a combining algorithm and
@@ -74,7 +71,7 @@ public abstract class CombinerElement {
      * 
      * @param element a <code>PolicyTreeElement</code> to use in combining
      * @param parameters a (possibly empty) non-null <code>List</code> of
-     *            <code>CombinerParameter<code>s provided for general
+     *            <code>CombinerParameter</code>s provided for general
      *                   use (for all pre-2.0 policies this must be empty)
      */
     public CombinerElement(PolicyTreeElement element, List parameters) {
@@ -106,7 +103,7 @@ public abstract class CombinerElement {
 
     /**
      * Encodes this <code>CombinerElement</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

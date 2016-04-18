@@ -35,11 +35,11 @@
 
 package org.wso2.balana.finder;
 
-import org.wso2.balana.ctx.EvaluationCtx;
+import java.net.URI;
+
 import org.wso2.balana.PolicyMetaData;
 import org.wso2.balana.VersionConstraints;
-
-import java.net.URI;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * This is the abstract class that all <code>PolicyFinder</code> modules extend. All methods have
@@ -87,7 +87,7 @@ public abstract class PolicyFinderModule {
      * Initializes this module for use by the given finder. Typically this is called when a
      * <code>PDP</code> is initialized with a <code>PDPConfig</code> containing the given
      * <code>PolicyFinder</code>. Because <code>PolicyFinderModule</code>s usually need to parse
-     * policies, and this requires knowing their <code>PolicyFinder<code>,
+     * policies, and this requires knowing their <code>PolicyFinder</code>,
      * parsing is usually done at or after this point in the lifetime
      * of this module. This might also be a good time to reset any internal
      * caches or temporary data. Note that this method may be called more

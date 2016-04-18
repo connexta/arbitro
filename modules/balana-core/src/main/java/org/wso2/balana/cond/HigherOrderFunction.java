@@ -35,25 +35,19 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ctx.EvaluationCtx;
-import org.wso2.balana.Indenter;
-
-import org.wso2.balana.attr.AttributeValue;
-import org.wso2.balana.attr.BagAttribute;
-import org.wso2.balana.attr.BooleanAttribute;
-
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.BagAttribute;
+import org.wso2.balana.attr.BooleanAttribute;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * Represents all of the higher order bag functions, except map, which has its own class due to the
@@ -145,7 +139,7 @@ public class HigherOrderFunction implements Function {
 	 * Creates a new instance of the given function.
 	 * 
 	 * @param functionName the function to create
-	 * 
+	 *
 	 * @throws IllegalArgumentException if the function is unknown
 	 */
 	public HigherOrderFunction(String functionName) {
@@ -536,7 +530,7 @@ public class HigherOrderFunction implements Function {
 
     /**
      * Encodes this <code>HigherOrderFunction</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

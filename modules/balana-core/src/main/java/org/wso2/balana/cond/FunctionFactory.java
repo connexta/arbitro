@@ -35,16 +35,13 @@
 
 package org.wso2.balana.cond;
 
-import org.wso2.balana.ParsingException;
-import org.wso2.balana.PolicyMetaData;
-import org.wso2.balana.UnknownIdentifierException;
-
 import java.net.URI;
-
 import java.util.HashMap;
 import java.util.Set;
 
 import org.w3c.dom.Node;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.UnknownIdentifierException;
 import org.wso2.balana.XACMLConstants;
 
 /**
@@ -371,7 +368,7 @@ public abstract class FunctionFactory {
      * 
      * @param proxy the function proxy to add
      * @param identity the name of the function
-     * 
+     *
      * @throws IllegalArgumentException if the name is already in use
      */
     public static void addAbstractGeneralFunction(FunctionProxy proxy, URI identity) {
@@ -393,6 +390,7 @@ public abstract class FunctionFactory {
      * @throws UnknownIdentifierException if the name isn't known
      * @throws FunctionTypeException if the name is known to map to an abstract function, and should
      *             therefore be created through createAbstractFunction
+     * @return returns an instance of the specified Function
      */
     public abstract Function createFunction(URI identity) throws UnknownIdentifierException,
             FunctionTypeException;
@@ -405,6 +403,7 @@ public abstract class FunctionFactory {
      * @throws UnknownIdentifierException if the name isn't known
      * @throws FunctionTypeException if the name is known to map to an abstract function, and should
      *             therefore be created through createAbstractFunction
+     * @return returns an instance of the specified Function
      */
     public abstract Function createFunction(String identity) throws UnknownIdentifierException,
             FunctionTypeException;
@@ -419,6 +418,7 @@ public abstract class FunctionFactory {
      * @throws FunctionTypeException if the name is known to map to a concrete function, and should
      *             therefore be created through createFunction
      * @throws ParsingException if the function can't be created with the given inputs
+     * @return returns an instance of the specified Function
      */
     public abstract Function createAbstractFunction(URI identity, Node root)
             throws UnknownIdentifierException, ParsingException, FunctionTypeException;
@@ -435,6 +435,7 @@ public abstract class FunctionFactory {
      * @throws FunctionTypeException if the name is known to map to a concrete function, and should
      *             therefore be created through createFunction
      * @throws ParsingException if the function can't be created with the given inputs
+     * @return returns an instance of the specified Function
      */
     public abstract Function createAbstractFunction(URI identity, Node root, String xpathVersion)
             throws UnknownIdentifierException, ParsingException, FunctionTypeException;
@@ -444,11 +445,13 @@ public abstract class FunctionFactory {
      * 
      * @param identity the name of the function
      * @param root the DOM root containing info used to create the function
+     * @return returns an instance of the specified Function
      * 
      * @throws UnknownIdentifierException if the name isn't known
      * @throws FunctionTypeException if the name is known to map to a concrete function, and should
      *             therefore be created through createFunction
      * @throws ParsingException if the function can't be created with the given inputs
+     * @return returns an instance of the specified Function
      */
     public abstract Function createAbstractFunction(String identity, Node root)
             throws UnknownIdentifierException, ParsingException, FunctionTypeException;
@@ -465,6 +468,7 @@ public abstract class FunctionFactory {
      * @throws FunctionTypeException if the name is known to map to a concrete function, and should
      *             therefore be created through createFunction
      * @throws ParsingException if the function can't be created with the given inputs
+     * @return returns an instance of the specified Function
      */
     public abstract Function createAbstractFunction(String identity, Node root, String xpathVersion)
             throws UnknownIdentifierException, ParsingException, FunctionTypeException;

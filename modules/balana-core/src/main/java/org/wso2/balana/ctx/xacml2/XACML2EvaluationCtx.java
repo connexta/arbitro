@@ -18,24 +18,7 @@
 
 package org.wso2.balana.ctx.xacml2;
 
-import org.w3c.dom.Node;
-import org.wso2.balana.*;
-import org.wso2.balana.attr.DateAttribute;
-import org.wso2.balana.attr.DateTimeAttribute;
-import org.wso2.balana.attr.TimeAttribute;
-import org.wso2.balana.cond.EvaluationResult;
-import org.wso2.balana.ctx.*;
-import org.wso2.balana.finder.ResourceFinderResult;
-import org.wso2.balana.xacml3.Attributes;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.attr.AttributeValue;
-import org.wso2.balana.attr.BagAttribute;
-import org.wso2.balana.attr.StringAttribute;
-import org.wso2.balana.xacml3.MultipleCtxResult;
-
 import java.net.URI;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -43,6 +26,28 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.w3c.dom.Node;
+import org.wso2.balana.PDPConfig;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.BagAttribute;
+import org.wso2.balana.attr.DateAttribute;
+import org.wso2.balana.attr.DateTimeAttribute;
+import org.wso2.balana.attr.StringAttribute;
+import org.wso2.balana.attr.TimeAttribute;
+import org.wso2.balana.cond.EvaluationResult;
+import org.wso2.balana.ctx.AbstractRequestCtx;
+import org.wso2.balana.ctx.Attribute;
+import org.wso2.balana.ctx.BasicEvaluationCtx;
+import org.wso2.balana.ctx.EvaluationCtx;
+import org.wso2.balana.ctx.Status;
+import org.wso2.balana.finder.ResourceFinderResult;
+import org.wso2.balana.xacml3.Attributes;
+import org.wso2.balana.xacml3.MultipleCtxResult;
 
 /**
  *
@@ -281,6 +286,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      * multiple resources (ie, a scope other than IMMEDIATE), and you need to keep changing only the
      * resource-id to evaluate the different effective requests.
      *
+     * @param attributesSet The attributes to be added to the ResourceId
      * @param resourceId the new resource-id value
      */
     public void setResourceId(AttributeValue resourceId, Set<Attributes> attributesSet) {
@@ -350,6 +356,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      * @param type   the type of the attribute value(s) to find
      * @param id     the id of the attribute value(s) to find
      * @param issuer the issuer of the attribute value(s) to find or null
+     * @param category the category of the attribute
      * @return a result containing a bag either empty because no values were found or containing at
      *         least one value, or status associated with an Indeterminate result
      */
@@ -362,6 +369,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      *
      * @param type   the type of the attribute value(s) to find
      * @param id     the id of the attribute value(s) to find
+     * @param category the category of the attribute
      * @param issuer the issuer of the attribute value(s) to find or null
      * @return a result containing a bag either empty because no values were found or containing at
      *         least one value, or status associated with an Indeterminate result
@@ -375,6 +383,7 @@ public class XACML2EvaluationCtx extends BasicEvaluationCtx {
      *
      * @param type   the type of the attribute value(s) to find
      * @param id     the id of the attribute value(s) to find
+     * @param category the category of the attribute
      * @param issuer the issuer of the attribute value(s) to find or null
      * @return a result containing a bag either empty because no values were found or containing at
      *         least one value, or status associated with an Indeterminate result

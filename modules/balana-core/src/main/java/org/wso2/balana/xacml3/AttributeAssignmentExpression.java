@@ -18,13 +18,15 @@
 
 package org.wso2.balana.xacml3;
 
+import java.net.URI;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.wso2.balana.DOMHelper;
-import org.wso2.balana.Indenter;
-import org.wso2.balana.ctx.AttributeAssignment;
-import org.wso2.balana.ctx.EvaluationCtx;
 import org.wso2.balana.ParsingException;
 import org.wso2.balana.PolicyMetaData;
 import org.wso2.balana.attr.AttributeValue;
@@ -33,10 +35,8 @@ import org.wso2.balana.cond.Evaluatable;
 import org.wso2.balana.cond.EvaluationResult;
 import org.wso2.balana.cond.Expression;
 import org.wso2.balana.cond.ExpressionHandler;
-
-import java.io.OutputStream;
-import java.net.URI;
-import java.util.*;
+import org.wso2.balana.ctx.AttributeAssignment;
+import org.wso2.balana.ctx.EvaluationCtx;
 
 /**
  * Represents AttributeAssignmentExpressionType in the XACML 3.0 policy schema..
@@ -188,7 +188,7 @@ public class AttributeAssignmentExpression {
 
     /**
      * Encodes this <code>AttributeAssignmentExpression</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

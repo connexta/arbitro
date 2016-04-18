@@ -18,8 +18,6 @@
 
 package org.wso2.balana;
 
-import org.wso2.balana.ctx.EvaluationCtx;import java.io.OutputStream;
-
 /**
  *
  */
@@ -35,7 +33,7 @@ public interface ObligationResult  {
 
     /**
      * Encodes this <code>ObligationResult</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

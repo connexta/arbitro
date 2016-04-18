@@ -35,14 +35,6 @@
 
 package org.wso2.balana.ctx;
 
-import org.wso2.balana.*;
-import org.wso2.balana.attr.AttributeFactory;
-import org.wso2.balana.attr.AttributeValue;
-import org.wso2.balana.attr.DateTimeAttribute;
-
-import java.io.PrintStream;
-import java.io.OutputStream;
-
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,6 +43,14 @@ import java.util.List;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.balana.Balana;
+import org.wso2.balana.DOMHelper;
+import org.wso2.balana.ParsingException;
+import org.wso2.balana.UnknownIdentifierException;
+import org.wso2.balana.XACMLConstants;
+import org.wso2.balana.attr.AttributeFactory;
+import org.wso2.balana.attr.AttributeValue;
+import org.wso2.balana.attr.DateTimeAttribute;
 
 /**
  * Represents the AttributeType XML type found in the context schema.
@@ -333,7 +333,7 @@ public class Attribute {
 
     /**
      * Encodes this <code>Attribute</code> into its XML form and writes this out to the provided
-     * <code>StringBuilder<code>
+     * <code>StringBuilder</code>
      *
      * @param builder string stream into which the XML-encoded data is written
      */

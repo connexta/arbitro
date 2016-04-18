@@ -35,25 +35,25 @@
 
 package org.wso2.balana.cond;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.wso2.balana.attr.AnyURIAttribute;
 import org.wso2.balana.attr.Base64BinaryAttribute;
 import org.wso2.balana.attr.BooleanAttribute;
+import org.wso2.balana.attr.DNSNameAttribute;
 import org.wso2.balana.attr.DateAttribute;
 import org.wso2.balana.attr.DateTimeAttribute;
 import org.wso2.balana.attr.DayTimeDurationAttribute;
-import org.wso2.balana.attr.DNSNameAttribute;
 import org.wso2.balana.attr.DoubleAttribute;
 import org.wso2.balana.attr.HexBinaryAttribute;
-import org.wso2.balana.attr.IntegerAttribute;
 import org.wso2.balana.attr.IPAddressAttribute;
+import org.wso2.balana.attr.IntegerAttribute;
 import org.wso2.balana.attr.RFC822NameAttribute;
 import org.wso2.balana.attr.StringAttribute;
 import org.wso2.balana.attr.TimeAttribute;
 import org.wso2.balana.attr.X500NameAttribute;
 import org.wso2.balana.attr.YearMonthDurationAttribute;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Represents all of the Bag functions, though the actual implementations are in two sub-classes
@@ -67,28 +67,28 @@ public abstract class BagFunction extends FunctionBase {
     /**
      * Base name for the type-one-and-only funtions. To get the standard identifier for a given
      * type, use <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g.,
-     * <code>string</code>) + </code>NAME_BASE_ONE_AND_ONLY</code>.
+     * <code>string</code>) + <code>NAME_BASE_ONE_AND_ONLY</code>.
      */
     public static final String NAME_BASE_ONE_AND_ONLY = "-one-and-only";
 
     /**
      * Base name for the type-bag-size funtions. To get the standard identifier for a given type,
      * use <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g.,
-     * <code>string</code>) + </code>NAME_BASE_BAG_SIZE</code>.
+     * <code>string</code>) + <code>NAME_BASE_BAG_SIZE</code>.
      */
     public static final String NAME_BASE_BAG_SIZE = "-bag-size";
 
     /**
      * Base name for the type-is-in. To get the standard identifier for a given type, use
      * <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g., <code>string</code>)
-     * + </code>NAME_BASE_IS_IN</code>.
+     * + <code>NAME_BASE_IS_IN</code>.
      */
     public static final String NAME_BASE_IS_IN = "-is-in";
 
     /**
      * Base name for the type-bag funtions. To get the standard identifier for a given type, use
      * <code>FunctionBase.FUNCTION_NS</code> + the datatype's base name (e.g., <code>string</code>)
-     * + </code>NAME_BASE_BAG</code>.
+     * + <code>NAME_BASE_BAG</code>.
      */
     public static final String NAME_BASE_BAG = "-bag";
 
