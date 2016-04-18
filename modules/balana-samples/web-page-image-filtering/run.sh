@@ -4,7 +4,7 @@ for f in ../lib/*.jar
 do
   BALANA_CLASSPATH=$BALANA_CLASSPATH:$f
 done
-for g in ../../balana-core/target/*jar
+for g in ../../arbitro-core/target/*jar
 do
   BALANA_CLASSPATH=$BALANA_CLASSPATH:$g
 done
@@ -14,7 +14,7 @@ do
 done
 BALANA_CLASSPATH=$BALANA_CLASSPATH:$CLASSPATH
 
-$JAVA_HOME/bin/java -classpath "$BALANA_CLASSPATH" org.wso2.balana.samples.image.filtering.ImageFilter $*
+$JAVA_HOME/bin/java -classpath "$BALANA_CLASSPATH" org.connexta.arbitro.samples.image.filtering.ImageFilter $*
 
 
 

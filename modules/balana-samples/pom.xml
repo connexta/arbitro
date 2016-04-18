@@ -17,26 +17,26 @@
 * under the License.
 */
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
-        <groupId>org.wso2.balana</groupId>
-        <artifactId>balana</artifactId>
-        <version>1.1.13-SNAPSHOT</version>
+        <groupId>org.connexta.arbitro</groupId>
+        <artifactId>arbitro</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>balana-samples</artifactId>
+    <artifactId>arbitro-samples</artifactId>
+    <groupId>org.connexta.arbitro.samples</groupId>
     <packaging>pom</packaging>
-    <name>WSO2 Balana Samples</name>
+    <name>Arbitro :: Samples</name>
     <description>
-        This is the pom file that defines the build process for the WSO2 Balana Samples. Balana is XACML
-        open source project which is based on the sunxacml http://sunxacml.sourceforge.net/ under the license
-        http://sunxacml.sourceforge.net/license.txt. But future development is released under Apache2 license
-        http://www.apache.org/licenses/LICENSE-2.0
+        Arbitro is an XACML 3.0 open source project derived from WSO2 Balana, which is based on sunxacml http://sunxacml.sourceforge.net/ under the license
+        http://sunxacml.sourceforge.net/license.txt. Future development is released under Apache2 license.
     </description>
-    <url>http://wso2.org</url>
+    <url>http://connexta.org</url>
 
     <modules>
         <module>kmarket-trading-sample</module>
