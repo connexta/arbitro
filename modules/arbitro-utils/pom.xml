@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.connexta.arbitro</groupId>
+        <artifactId>arbitro</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>arbitro-utils</artifactId>
+    <groupId>com.connexta.arbitro.utils</groupId>
+    <packaging>bundle</packaging>
+    <name>Arbitro :: Utils</name>
+    <description>
+        Arbitro is an XACML 3.0 open source project derived from WSO2 Balana, which is based on sunxacml http://sunxacml.sourceforge.net/ under the license
+        http://sunxacml.sourceforge.net/license.txt. Future development is released under Apache2 license.
+    </description>
+    <url>http://connexta.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xerces.wso2</groupId>
+            <artifactId>xercesImpl</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jvnet.maven.incrementalbuild</groupId>
+                    <artifactId>incremental-build-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>incremental-build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.connexta.arbitro.*;version="${exp.pkg.version.arbitro}"
+                        </Export-Package>
+                        <Import-Package>
+                            !javax.xml.namespace,
+                            javax.xml; version="${imp.pkg.version.javax.xml}",
+                            javax.xml.parsers; version="${imp.pkg.version.javax.xml.parsers}",
+                            javax.xml.transform; version="${imp.pkg.version.javax.xml}",
+                            javax.xml.transform.dom; version="${imp.pkg.version.javax.xml}",
+                            javax.xml.transform.stream; version="${imp.pkg.version.javax.xml}",
+                            org.apache.commons.logging; version="${commons-logging.osgi.version.range}",
+                            org.apache.xerces.impl; resolution:=optional,
+                            org.apache.xerces.util; resolution:=optional,
+                            org.w3c.dom
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

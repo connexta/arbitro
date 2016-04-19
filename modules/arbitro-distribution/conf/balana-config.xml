@@ -1,0 +1,11 @@
+<config defaultPDP="pdp" defaultAttributeFactory="attr"
+        defaultCombiningAlgFactory="comb" defaultFunctionFactory="func">
+    <pdp name="pdp">
+        <attributeFinderModule class="CurrentEnvModule"/>
+        <attributeFinderModule class="SelectorModule"/>
+        <policyFinderModule class="FileBasedPolicyFinderModule"/>
+    </pdp>
+    <attributeFactory name="attr" useStandardDatatypes="true"/>
+    <combiningAlgFactory name="comb" useStandardAlgorithms="true"/>
+    <functionFactory name="func" useStandardFunctions="true"/>
+</config>

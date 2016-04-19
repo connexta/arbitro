@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>arbitro-samples</artifactId>
+        <groupId>com.connexta.arbitro.samples</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>image-filtering-sample</artifactId>
+    <groupId>com.connexta.arbitro.samples.image.filtering</groupId>
+    <packaging>jar</packaging>
+    <name>Arbitro Sample Filtering Static Resources</name>
+    <description>
+        Arbitro is an XACML 3.0 open source project derived from WSO2 Balana, which is based on sunxacml http://sunxacml.sourceforge.net/ under the license
+        http://sunxacml.sourceforge.net/license.txt. Future development is released under Apache2 license.
+    </description>
+    <url>http://connexta.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.connexta.arbitro</groupId>
+            <artifactId>arbitro-core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

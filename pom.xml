@@ -21,7 +21,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.connexta.arbitro</groupId>
+    <groupId>com.connexta.arbitro</groupId>
     <artifactId>arbitro</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -49,12 +49,21 @@
         <tag>HEAD</tag>
     </scm>
 
+    <developers>
+        <developer>
+            <name>Connexta Developer</name>
+            <email>opensource@connexta.com?</email>
+            <organization>Connexta</organization>
+            <organizationUrl>http://www.connexta.com</organizationUrl>
+        </developer>
+    </developers>
+
     <modules>
-        <module>modules/balana-core</module>
-        <module>modules/balana-utils</module>
-        <module>modules/balana-samples</module>
-        <module>modules/balana-documentation</module>
-        <module>modules/balana-distribution</module>
+        <module>modules/arbitro-core</module>
+        <module>modules/arbitro-utils</module>
+        <module>modules/arbitro-samples</module>
+        <module>modules/arbitro-documentation</module>
+        <module>modules/arbitro-distribution</module>
     </modules>
 
     <dependencyManagement>
@@ -65,7 +74,7 @@
                 <version>${commons-logging.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.connexta.arbitro.core</groupId>
+                <groupId>com.connexta.arbitro</groupId>
                 <artifactId>arbitro-core</artifactId>
                 <version>${arbitro.version}</version>
             </dependency>
@@ -158,32 +167,6 @@
         </pluginManagement>
 
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <preparationGoals>clean install</preparationGoals>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                </configuration>
-            </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-gpg-plugin</artifactId>-->
-                <!--<version>1.5</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>sign-artifacts</id>-->
-                        <!--<phase>verify</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>sign</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>buildnumber-maven-plugin</artifactId>

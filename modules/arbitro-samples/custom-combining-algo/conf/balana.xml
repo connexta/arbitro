@@ -1,0 +1,14 @@
+<config defaultPDP="pdp" defaultAttributeFactory="attr"
+        defaultCombiningAlgFactory="comb" defaultFunctionFactory="func">
+    <pdp name="pdp">
+        <attributeFinderModule class="com.connexta.arbitro.finder.impl.CurrentEnvModule"/>
+        <attributeFinderModule class="com.connexta.arbitro.finder.impl.SelectorModule"/>
+	<attributeFinderModule class="com.connexta.arbitro.finder.impl.SelectorModule"/>
+        <policyFinderModule class="com.connexta.arbitro.finder.impl.FileBasedPolicyFinderModule"/>
+    </pdp>
+    <attributeFactory name="attr" useStandardDatatypes="true"/>
+    <functionFactory name="func" useStandardFunctions="true"/>
+    <combiningAlgFactory name="comb" useStandardAlgorithms="true">
+        <algorithm class="com.connexta.arbitro.samples.custom.algo.HighestEffectRuleAlg"/>
+    </combiningAlgFactory>
+</config>

@@ -1,0 +1,21 @@
+<config defaultPDP="pdp" defaultAttributeFactory="attr"
+        defaultCombiningAlgFactory="comb" defaultFunctionFactory="func">
+    <pdp name="pdp">
+        <attributeFinderModule class="com.connexta.arbitro.finder.impl.CurrentEnvModule"/>
+        <attributeFinderModule class="com.connexta.arbitro.finder.impl.SelectorModule"/>
+        <policyFinderModule class="com.connexta.arbitro.finder.impl.FileBasedPolicyFinderModule">
+            <set>
+                <string>/home/asela/Carbon/commons/commons/balana/src/test/resources/basic/3/policies/TestPolicy_0001.xml</string>
+            </set>
+        </policyFinderModule>
+    </pdp>
+    <attributeFactory name="attr" useStandardDatatypes="true"/>
+    <combiningAlgFactory name="comb" useStandardAlgorithms="true">
+        <!--algorithm class="DenyUnlessPermitRuleAlg"/-->
+    </combiningAlgFactory>
+    <functionFactory name="func" useStandardFunctions="true"/>
+    <!--condition>
+        <function class="TimeInRangeFunction"/>
+      </condition>
+    </functionFactory-->
+</config>
