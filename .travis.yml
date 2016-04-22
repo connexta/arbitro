@@ -1,0 +1,9 @@
+sudo: false
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+install: mvn --quiet install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script: mvn clean verify
