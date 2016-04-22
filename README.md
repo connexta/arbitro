@@ -1,12 +1,11 @@
-WSO2 Balana Implementation
+Connexta Arbitro Implementation
 ==========================
 
 ---
 
 |  Branch | Build Status |
 | :------------ |:-------------
-| master      | [![Build Status](https://wso2.org/jenkins/job/wso2-balana/badge/icon)](https://wso2.org/jenkins/job/wso2-balana) |
-
+| master      | [![Build Status](https://travis-ci.org/connexta/arbitro.svg?branch=master)](https://travis-ci.org/connexta/arbitro) |
 
 ---
 
