@@ -1,9 +1,9 @@
 sudo: false
-
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 install: mvn --quiet install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script: mvn clean verify
+notifications:
+  slack:
+    secure: nOyLQIzqrTc9q0fUnzZ3j/rWnEPmQdyONsN/haCLTr1R/wvAserjTLTqYx+6sp5//9DIKoRP1rn0jjptbwT23Li8qpF6IaH+coDfMwkKIfy0aie5dHHggHWgIk0/eycjp+4y4vOLdIJRkvQNES8Yis28EPySWPr9ZlOx/KAcMnpHzBQQKLcTc7Im3DJ6eJ7o/dVY3tNl+8jbehoLGtG/KGeXWICU3+gSWf4u4skHI/+HIZimS/HtCSSZsS9vRhCrcJl1PDN9ors/uNvuvAHXQDxzWD23UDlbSuFk7kX0068utF6nHberGcEU0FLcwL8Z6pMYsNNcRGdvad9dVPmL6ngi5purL5PTUwdvhu0rs8DuEr0owEclMEbI9d19mcwYuRZE2u1lUIPZq4gNwS32pNrJOQWbNZ6s9TCDTWJ03jShiWX5JFkD/BZrWk+LkTx9GaZDqOhRcEM4RdtihWugyZLPtuGBkVSneayMmohGZ8FG7drUzyDr2K/27fF9Xl/On6aXtaU3+0z+iOwVjnyl4ztYhSmvWBKXfkOUHbZrtNZZf65tSLz3Z2ROtLo8LbkRB9UggO5jHpA5Es8DfJmQfu2+4KibeUphU+Wy0jhmqkcuc+h7cetFe60YnJE/99UqdZrn/YhugO851+r3fNLkxx1s4LnnfM4SCFJ6O7vPMUI=
