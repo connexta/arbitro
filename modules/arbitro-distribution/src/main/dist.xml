@@ -8,7 +8,7 @@
  </formats>
  <files>
   <file>
-   <source>../arbitro-core/target/arbitro-core-1.0.0-SNAPSHOT.jar</source>
+   <source>../arbitro-core/target/arbitro-core-1.0.0.jar</source>
    <outputDirectory>/</outputDirectory>
   </file>
   <file>
