@@ -70,8 +70,8 @@
     </distributionManagement>
 
     <modules>
-        <module>modules/arbitro-core</module>
         <module>modules/arbitro-utils</module>
+        <module>modules/arbitro-core</module>
         <module>modules/arbitro-samples</module>
         <module>modules/arbitro-documentation</module>
         <module>modules/arbitro-distribution</module>
@@ -95,13 +95,13 @@
                 <version>${junit.version}</version>
             </dependency>
             <dependency>
-                <groupId>xerces.wso2</groupId>
+                <groupId>org.wso2.orbit.xerces</groupId>
                 <artifactId>xercesImpl</artifactId>
                 <version>${xercesImpl.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.balana</groupId>
-                <artifactId>org.wso2.balana.utils</artifactId>
+                <groupId>com.connexta.arbitro.utils</groupId>
+                <artifactId>arbitro-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
@@ -115,7 +115,7 @@
         <exp.pkg.version.arbitro>${arbitro.version}</exp.pkg.version.arbitro>
         <imp.pkg.version.javax.xml.parsers>[0.0.0, 1.0.0)</imp.pkg.version.javax.xml.parsers>
         <commons-logging.osgi.version.range>[1.2,2.0)</commons-logging.osgi.version.range>
-        <xercesImpl.version>2.8.1.wso2v2</xercesImpl.version>
+        <xercesImpl.version>2.12.0.wso2v1</xercesImpl.version>
 
         <!--plugin versions-->
         <bundle.plugin.version>3.0.0</bundle.plugin.version>

@@ -16,22 +16,6 @@
 
 package com.connexta.arbitro.finder.impl;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.connexta.arbitro.AbstractPolicy;
 import com.connexta.arbitro.DOMHelper;
 import com.connexta.arbitro.MatchResult;
@@ -47,6 +31,21 @@ import com.connexta.arbitro.ctx.Status;
 import com.connexta.arbitro.finder.PolicyFinder;
 import com.connexta.arbitro.finder.PolicyFinderModule;
 import com.connexta.arbitro.finder.PolicyFinderResult;
+import com.connexta.arbitro.utils.Utils;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

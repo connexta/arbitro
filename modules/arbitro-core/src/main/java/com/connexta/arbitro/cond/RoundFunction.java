@@ -36,10 +36,10 @@
 package com.connexta.arbitro.cond;
 
 import com.connexta.arbitro.attr.AttributeValue;
-import com.connexta.arbitro.ctx.EvaluationCtx;
-
 import com.connexta.arbitro.attr.DoubleAttribute;
-
+import com.connexta.arbitro.ctx.EvaluationCtx;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

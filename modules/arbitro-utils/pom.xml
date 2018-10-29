@@ -25,7 +25,7 @@
             <artifactId>commons-logging</artifactId>
         </dependency>
         <dependency>
-            <groupId>xerces.wso2</groupId>
+            <groupId>org.wso2.orbit.xerces</groupId>
             <artifactId>xercesImpl</artifactId>
         </dependency>
     </dependencies>
@@ -57,8 +57,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Export-Package>
                             com.connexta.arbitro.*;version="${exp.pkg.version.arbitro}"
                         </Export-Package>

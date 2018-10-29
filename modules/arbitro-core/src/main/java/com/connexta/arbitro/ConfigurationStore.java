@@ -35,6 +35,28 @@
 
 package com.connexta.arbitro;
 
+import com.connexta.arbitro.attr.AttributeFactory;
+import com.connexta.arbitro.attr.AttributeFactoryProxy;
+import com.connexta.arbitro.attr.AttributeProxy;
+import com.connexta.arbitro.attr.BaseAttributeFactory;
+import com.connexta.arbitro.attr.StandardAttributeFactory;
+import com.connexta.arbitro.combine.BaseCombiningAlgFactory;
+import com.connexta.arbitro.combine.CombiningAlgFactory;
+import com.connexta.arbitro.combine.CombiningAlgFactoryProxy;
+import com.connexta.arbitro.combine.CombiningAlgorithm;
+import com.connexta.arbitro.combine.StandardCombiningAlgFactory;
+import com.connexta.arbitro.cond.BaseFunctionFactory;
+import com.connexta.arbitro.cond.BasicFunctionFactoryProxy;
+import com.connexta.arbitro.cond.Function;
+import com.connexta.arbitro.cond.FunctionFactory;
+import com.connexta.arbitro.cond.FunctionFactoryProxy;
+import com.connexta.arbitro.cond.FunctionProxy;
+import com.connexta.arbitro.cond.StandardFunctionFactory;
+import com.connexta.arbitro.cond.cluster.FunctionCluster;
+import com.connexta.arbitro.finder.AttributeFinder;
+import com.connexta.arbitro.finder.PolicyFinder;
+import com.connexta.arbitro.finder.ResourceFinder;
+import com.connexta.arbitro.utils.Utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -48,40 +70,18 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.connexta.arbitro.attr.AttributeFactory;
-import com.connexta.arbitro.attr.AttributeProxy;
-import com.connexta.arbitro.attr.BaseAttributeFactory;
-import com.connexta.arbitro.attr.StandardAttributeFactory;
-import com.connexta.arbitro.combine.BaseCombiningAlgFactory;
-import com.connexta.arbitro.combine.CombiningAlgFactoryProxy;
-import com.connexta.arbitro.combine.CombiningAlgorithm;
-import com.connexta.arbitro.combine.StandardCombiningAlgFactory;
-import com.connexta.arbitro.cond.BaseFunctionFactory;
-import com.connexta.arbitro.cond.BasicFunctionFactoryProxy;
-import com.connexta.arbitro.cond.Function;
-import com.connexta.arbitro.cond.FunctionFactory;
-import com.connexta.arbitro.cond.FunctionFactoryProxy;
-import com.connexta.arbitro.cond.FunctionProxy;
-import com.connexta.arbitro.cond.StandardFunctionFactory;
-import com.connexta.arbitro.cond.cluster.FunctionCluster;
-import com.connexta.arbitro.finder.PolicyFinder;
-import com.connexta.arbitro.finder.ResourceFinder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import com.connexta.arbitro.attr.AttributeFactoryProxy;
-import com.connexta.arbitro.combine.CombiningAlgFactory;
-import com.connexta.arbitro.finder.AttributeFinder;
 import org.xml.sax.SAXException;
 
 /**

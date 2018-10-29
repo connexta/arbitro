@@ -19,23 +19,24 @@
 package com.connexta.arbitro;
 
 import com.connexta.arbitro.attr.AttributeFactory;
+import com.connexta.arbitro.combine.CombiningAlgFactory;
 import com.connexta.arbitro.cond.FunctionFactory;
+import com.connexta.arbitro.finder.AttributeFinder;
 import com.connexta.arbitro.finder.AttributeFinderModule;
 import com.connexta.arbitro.finder.PolicyFinder;
 import com.connexta.arbitro.finder.PolicyFinderModule;
 import com.connexta.arbitro.finder.impl.CurrentEnvModule;
 import com.connexta.arbitro.finder.impl.FileBasedPolicyFinderModule;
 import com.connexta.arbitro.finder.impl.SelectorModule;
-import com.connexta.arbitro.combine.CombiningAlgFactory;
-import com.connexta.arbitro.finder.AttributeFinder;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-
+import com.connexta.arbitro.utils.Utils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * This is the core class for the Balana project providing the init point of Balana engine.
@@ -86,7 +87,7 @@ public class Balana {
     /**
      * One instance of Balana engine is created.
      */
-    private static Balana balana;
+    private volatile static Balana balana;
 
     /**
      * Logger instance

@@ -35,24 +35,17 @@
 
 package com.connexta.arbitro.ctx;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.wso2.balana.ParsingException;
-
+import com.connexta.arbitro.ParsingException;
+import com.connexta.arbitro.utils.Utils;
 import java.io.File;
 import java.io.InputStream;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.connexta.arbitro.ParsingException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import org.wso2.balana.utils.Utils;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;

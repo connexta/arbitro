@@ -15,21 +15,20 @@
  */
 package com.connexta.arbitro.xacml3;
 
+import com.connexta.arbitro.DOMHelper;
+import com.connexta.arbitro.ParsingException;
+import com.connexta.arbitro.XACMLConstants;
+import com.connexta.arbitro.ctx.Attribute;
+import com.connexta.arbitro.utils.Utils;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import com.connexta.arbitro.XACMLConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import com.connexta.arbitro.DOMHelper;
-import com.connexta.arbitro.ParsingException;
-import com.connexta.arbitro.ctx.Attribute;
 
 /**
  * Represents the AttributesType XML type found in the context schema.

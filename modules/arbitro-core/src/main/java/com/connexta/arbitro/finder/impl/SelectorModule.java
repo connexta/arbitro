@@ -35,22 +35,6 @@
 
 package com.connexta.arbitro.finder.impl;
 
-
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.namespace.NamespaceContext;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
-
 import com.connexta.arbitro.Balana;
 import com.connexta.arbitro.DOMHelper;
 import com.connexta.arbitro.DefaultNamespaceContext;
@@ -64,6 +48,20 @@ import com.connexta.arbitro.cond.EvaluationResult;
 import com.connexta.arbitro.ctx.EvaluationCtx;
 import com.connexta.arbitro.ctx.Status;
 import com.connexta.arbitro.finder.AttributeFinderModule;
+import com.connexta.arbitro.utils.Utils;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

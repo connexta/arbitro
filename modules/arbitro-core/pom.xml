@@ -67,8 +67,8 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.wso2.balana</groupId>
-            <artifactId>org.wso2.balana.utils</artifactId>
+            <groupId>com.connexta.arbitro.utils</groupId>
+            <artifactId>arbitro-utils</artifactId>
         </dependency>
     </dependencies>
 
@@ -109,8 +109,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Export-Package>
                             com.connexta.arbitro.*;version="${exp.pkg.version.arbitro}"
                         </Export-Package>
@@ -124,7 +123,7 @@
                             javax.xml.transform.stream; version="${imp.pkg.version.javax.xml}",
                             javax.xml.xpath; version="${imp.pkg.version.javax.xml}",
                             org.apache.commons.logging.*; version="${commons-logging.osgi.version.range}",
-                            org.wso2.balana.utils;version="${imp.pkg.version.balana}",
+                            com.connexta.arbitro.utils;version="${exp.pkg.version.arbitro}",
                             org.w3c.dom,
                             org.xml.sax
                         </Import-Package>

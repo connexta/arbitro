@@ -35,17 +35,15 @@
 
 package com.connexta.arbitro.ctx;
 
-import com.connexta.arbitro.Balana;
 import com.connexta.arbitro.DOMHelper;
 import com.connexta.arbitro.ParsingException;
-
+import com.connexta.arbitro.utils.Utils;
 import java.io.ByteArrayInputStream;
-
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.List;
-
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -53,10 +51,8 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-import org.wso2.balana.utils.Utils;
 import org.xml.sax.SAXException;
 
 /**

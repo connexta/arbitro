@@ -18,18 +18,16 @@
 
 package com.connexta.arbitro.ctx;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import com.connexta.arbitro.Balana;
 import com.connexta.arbitro.ParsingException;
 import com.connexta.arbitro.XACMLConstants;
 import com.connexta.arbitro.ctx.xacml3.RequestCtx;
+import com.connexta.arbitro.utils.Utils;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

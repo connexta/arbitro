@@ -177,7 +177,7 @@ public abstract class AbstractPolicy  implements PolicyTreeElement{
 
         String namespaceUri = XACMLConstants.XACML_3_0_IDENTIFIER;
         if (target != null) {
-            if (target instanceof org.wso2.balana.xacml2.Target) {
+            if (target instanceof com.connexta.arbitro.xacml2.Target) {
                 namespaceUri = XACMLConstants.XACML_2_0_IDENTIFIER;
             }
         }
